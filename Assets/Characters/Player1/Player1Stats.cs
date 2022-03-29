@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Player1Stats : MonoBehaviour
 {
+	//general stats
 	public int playerHealth;
 	public int maxPlayerHealth;
-	public int particleHealth;
 	public int playerDamage;
 	private int playerArmour;
 	public float playerSpeedModifier;
 	private float invincibilityTime = 0;
 	private float knockback;
 
+	//ability 1_1 stats
+	public int particleHealth;
+	private int partialHeal;
+
+	//external objects
 	private GameObject RespawnPoint;
 	private GameObject Menu_LevelUp1;
 	private GameObject Enemy1;
@@ -52,6 +57,16 @@ public class Player1Stats : MonoBehaviour
 	{
 		if (collision.collider.tag == "EnemyHitbox" && invincibilityTime <= 0f)
 		{
+			//Knockback
+			Vector2 enemyPos = collision.transform.position;
+			Vector2 origin = gameObject.transform.position;
+			Vector2 direction = origin - enemyPos;
+			direction.Normalize();
+			direction.y += 1f;
+			rb2D.AddForce(new Vector2(knockback * direction.x * playerSpeedModifier, knockback * direction.y * playerSpeedModifier), ForceMode2D.Impulse);
+
+			gameObject.GetComponent<Ability1_1>().HealthParticleEmission();
+
 			if (enemy1Damage - playerArmour < 0)
 			{
 				playerHealth -= 1;
@@ -70,14 +85,6 @@ public class Player1Stats : MonoBehaviour
 			Debug.Log("Player damaged by " + collision.collider.name);
 			invincibilityTime = 0.4f;
 			Debug.Log(playerHealth);
-
-			//Knockback
-			Vector2 enemyPos = collision.transform.position;
-			Vector2 origin = gameObject.transform.position;
-			Vector2 direction = origin - enemyPos;
-			direction.Normalize();
-			direction.y += 1f;
-			rb2D.AddForce(new Vector2(knockback * direction.x * playerSpeedModifier, knockback * direction.y * playerSpeedModifier), ForceMode2D.Impulse);
 		}
 	}
 
@@ -104,6 +111,24 @@ public class Player1Stats : MonoBehaviour
 	public void Ability1_1Unlock()
     {
 		gameObject.GetComponent<Ability1_1>().enabled = true;
+    }
+
+	public void Ability1_1Used()
+    {
+		playerHealth -= Mathf.RoundToInt(maxPlayerHealth * particleHealth / 25);
+    }
+
+	public void ParticleHeal()
+    {
+		if ((maxPlayerHealth - playerHealth) < particleHealth)
+        {
+			partialHeal = particleHealth - (maxPlayerHealth - playerHealth);
+			playerHealth += partialHeal;
+        }
+		else
+        {
+			playerHealth += particleHealth;
+        }
     }
 
 	public void Ability2_1Unlock()

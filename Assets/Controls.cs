@@ -245,7 +245,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2e33c51b-10ca-4d6f-9509-3cf1a1145810"",
-                    ""path"": ""<Keyboard>/period"",
+                    ""path"": ""<Keyboard>/comma"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
