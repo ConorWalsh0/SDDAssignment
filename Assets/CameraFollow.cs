@@ -11,10 +11,19 @@ public class CameraFollow : MonoBehaviour
     private Controls controls;
     private Vector2 direction;
     private Vector3 delta;
+    public GameObject Menu_LevelUp1;
+    private bool cameraMobilised;
 
     void Awake()
     {
         controls = new Controls();
+    }
+
+    void Start()
+    {
+        Menu_LevelUp1 = GameObject.Find("Menu_LevelUp1");
+        Menu_LevelUp1.SetActive(false);
+        cameraMobilised = false;
     }
 
     void OnEnable()
@@ -24,6 +33,11 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!cameraMobilised)
+        {
+            return;
+        }
+
         direction = controls.Gameplay.Movement1.ReadValue<Vector2>();
         Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target.position);
 
@@ -42,5 +56,10 @@ public class CameraFollow : MonoBehaviour
 
         Vector3 destination = transform.position + delta;
         transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+    }
+
+    public void CameraMobilised()
+    {
+        cameraMobilised = true;
     }
 }

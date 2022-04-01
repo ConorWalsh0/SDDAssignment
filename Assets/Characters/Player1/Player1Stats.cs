@@ -23,26 +23,31 @@ public class Player1Stats : MonoBehaviour
 	private GameObject Enemy1;
 	private int enemy1Damage;
 	private Rigidbody2D rb2D;
+	private char Player1Class;
 
 	void Awake()
 	{
+		rb2D = GetComponent<Rigidbody2D>();
+	}
+
+	void Start()
+	{
+		Menu_LevelUp1 = GameObject.Find("Main Camera").GetComponent<CameraFollow>().Menu_LevelUp1;
+		Player1Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().Player1CharacterSelect;
+
+
+
 		maxPlayerHealth = 100;
 		playerHealth = maxPlayerHealth;
 		particleHealth = 5;
 		playerDamage = 30;
 		playerSpeedModifier = 1f;
-		rb2D = gameObject.GetComponent<Rigidbody2D>();
-	}
 
-	void Start()
-	{
-		Menu_LevelUp1 = GameObject.Find("Menu_LevelUp1");
-		Menu_LevelUp1.SetActive(false);
 		RespawnPoint = GameObject.Find("RespawnPoint");
 		playerArmour = 0;
 		knockback = 50f;
 		Enemy1 = GameObject.Find("Enemy1");
-		enemy1Damage = Enemy1.GetComponent<Enemy1Behaviour>().enemyDamage;
+		enemy1Damage = 1;// Enemy1.GetComponent<Enemy1Behaviour>().enemyDamage;
 	}
 
 	void Update()

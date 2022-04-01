@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player1Movement : MonoBehaviour
 {
-	private Rigidbody2D rb2D;
+	private Rigidbody2D _rb2D;
 	private float playerSpeed = 150.0f;
 	private float jumpHeight = 100.0f;
 	private bool isJumping = false;
@@ -19,7 +19,7 @@ public class Player1Movement : MonoBehaviour
 	void Awake()
 	{
 		controls = new Controls();
-		rb2D = gameObject.GetComponent<Rigidbody2D>();
+		_rb2D = gameObject.GetComponent<Rigidbody2D>();
 		controls.Gameplay.Jump1.performed += JumpPerformed;
 	}
 
@@ -40,7 +40,7 @@ public class Player1Movement : MonoBehaviour
 		if (moveHorizontal != Vector2.zero)
 		{
 			xComponent = moveHorizontal.x;
-			rb2D.AddForce(new Vector2(xComponent * playerSpeed * speedModifier * Time.deltaTime, 0f), ForceMode2D.Impulse);
+			_rb2D.AddForce(new Vector2(xComponent * playerSpeed * speedModifier * Time.deltaTime, 0f), ForceMode2D.Impulse);
 		}
 
 		if (moveHorizontal.x < 0f && facingRight)
@@ -66,7 +66,7 @@ public class Player1Movement : MonoBehaviour
 	{
 		if (!isJumping)
 		{
-			rb2D.AddForce(new Vector2(0f, jumpHeight * speedModifier), ForceMode2D.Impulse);
+			_rb2D.AddForce(new Vector2(0f, jumpHeight * speedModifier), ForceMode2D.Impulse);
 			playerSpeed *= 0.8f;
 			isJumping = true;
 		}

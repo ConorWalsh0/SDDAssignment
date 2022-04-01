@@ -9,7 +9,7 @@ public class Ability0_1 : MonoBehaviour
     private Controls controls;
     private int player1Damage;
     public int ability0_1Damage;
-    private float delay = 0f;
+    private float delay;
 
     void Awake()
     {
@@ -21,6 +21,7 @@ public class Ability0_1 : MonoBehaviour
     {
         player1Damage = gameObject.GetComponent<Player1Stats>().playerDamage;
         ability0_1Damage = player1Damage;
+        delay = 0f;
     }
 
     void Update()

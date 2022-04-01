@@ -7,11 +7,13 @@ public class Ability1_1 : MonoBehaviour
 {
 	private ParticleSystem particleSys;
 	private Controls controls;
-	private bool ability1_1Enabled;
 	private int playerHealth;
 	private int maxPlayerHealth;
 	private int damageParticleNum;
 	private int abilityParticleNum;
+	private Vector2 FighterPosition;
+	private Vector2 WizardPosition;
+	private Vector2 RoguePosition;
 
 	void Start()
 	{
@@ -64,6 +66,15 @@ public class Ability1_1 : MonoBehaviour
 		for (int i = 0; i < numEnter; i++)
 		{
 			ParticleSystem.Particle p = enter[i];
+
+			//Unable to get specific collider from each trigger using trigger module, hence this workaround
+			FighterPosition = particleSys.trigger.GetCollider(0).gameObject.transform.position;
+			WizardPosition = particleSys.trigger.GetCollider(1).gameObject.transform.position;
+			RoguePosition = particleSys.trigger.GetCollider(2).gameObject.transform.position;
+
+			Debug.Log(particleSys.trigger.GetCollider(0).gameObject.transform.position - p.position);
+
+
 			playerHealth = GetComponent<Player1Stats>().playerHealth;
 			maxPlayerHealth = GetComponent<Player1Stats>().maxPlayerHealth;
 
@@ -72,7 +83,6 @@ public class Ability1_1 : MonoBehaviour
 				p.remainingLifetime = 0f;
 				GetComponent<Player1Stats>().ParticleHeal();
 			}
-
 			enter[i] = p;
 		}
 

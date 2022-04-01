@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy1Behaviour : MonoBehaviour
 {
+
+	//TODO: Create parent class 'Enemy' with shared behaviours for use in OnCollision in player scripts
+
 	private Rigidbody2D rb2D;
 	public Animator animator;
 	private RaycastHit2D raycastHit;
@@ -28,7 +31,7 @@ public class Enemy1Behaviour : MonoBehaviour
 
 	void Start()
 	{
-		Player1 = GameObject.Find("Player1");
+		Player1 = GameObject.Find("FighterClass");
 		ability0_1Damage = Player1.GetComponent<Ability0_1>().ability0_1Damage;
 		invincibilityTime = 0f;
 		enemyHealth = 100;
