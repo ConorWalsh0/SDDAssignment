@@ -7,12 +7,14 @@ public class CameraFollow : MonoBehaviour
 {
     public float dampTime = 0.4f;
     private Vector3 velocity = Vector3.zero;
-    public Transform target;
+    private Vector3 target;
     private Controls controls;
     private Vector2 direction;
     private Vector3 delta;
     public GameObject Menu_LevelUp1;
     private bool cameraMobilised;
+    private GameObject Player1;
+    private GameObject Player2;
 
     void Awake()
     {
@@ -38,20 +40,21 @@ public class CameraFollow : MonoBehaviour
             return;
         }
 
+        target = gameObject.GetComponent<Players>().PlayersMidpoint(Player1, Player2);
         direction = controls.Gameplay.Movement1.ReadValue<Vector2>();
-        Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target.position);
+        Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target);
 
         if (direction.x > 0f)
         {
-            delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.25f, 0.5f, point.z));
+            delta = target - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.25f, 0.5f, point.z));
         }
         else if (direction.x < 0f) 
         {
-            delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.75f, 0.5f, point.z));
+            delta = target - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.75f, 0.5f, point.z));
         }
         else
         {
-            delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z));
+            delta = target - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z));
         }
 
         Vector3 destination = transform.position + delta;
@@ -60,6 +63,8 @@ public class CameraFollow : MonoBehaviour
 
     public void CameraMobilised()
     {
+        Player1 = gameObject.GetComponent<LevelManager>().LvlStartPlayer1;
+        Player2 = gameObject.GetComponent<LevelManager>().LvlStartPlayer2;
         cameraMobilised = true;
     }
 }

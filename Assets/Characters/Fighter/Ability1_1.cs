@@ -11,15 +11,27 @@ public class Ability1_1 : MonoBehaviour
 	private int maxPlayerHealth;
 	private int damageParticleNum;
 	private int abilityParticleNum;
-	private Vector2 FighterPosition;
-	private Vector2 WizardPosition;
-	private Vector2 RoguePosition;
+	private float FighterDistance;
+	private float WizardDistance;
+	private float RogueDistance;
+	private char closestPlayer;
+	private float minDistance;
+	private float invincibilityTime;
 
 	void Start()
 	{
 		controls = new Controls();
 		controls.Gameplay.Enable();
 		particleSys = GetComponent<ParticleSystem>();
+		invincibilityTime = 0f;
+	}
+
+	void Update()
+    {
+		if (invincibilityTime > 0)
+		{
+			invincibilityTime -= Time.deltaTime;
+		}
 	}
 
 	void Ability1_1Performed(InputAction.CallbackContext context)
@@ -58,7 +70,16 @@ public class Ability1_1 : MonoBehaviour
 		controls.Gameplay.Ability1_1.performed -= Ability1_1Performed;
 	}
 
-	void OnParticleTrigger()
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.collider.tag == "EnemyHitbox" && invincibilityTime <= 0f)
+		{
+			HealthParticleEmission();
+			invincibilityTime = 0.4f;
+		}
+	}
+
+			void OnParticleTrigger()
 	{
 		List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
 		int numEnter = particleSys.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
@@ -66,14 +87,8 @@ public class Ability1_1 : MonoBehaviour
 		for (int i = 0; i < numEnter; i++)
 		{
 			ParticleSystem.Particle p = enter[i];
-
-			//Unable to get specific collider from each trigger using trigger module, hence this workaround
-			FighterPosition = particleSys.trigger.GetCollider(0).gameObject.transform.position;
-			WizardPosition = particleSys.trigger.GetCollider(1).gameObject.transform.position;
-			RoguePosition = particleSys.trigger.GetCollider(2).gameObject.transform.position;
-
-			Debug.Log(particleSys.trigger.GetCollider(0).gameObject.transform.position - p.position);
-
+			ClosestPlayer(p.position);
+			Debug.Log(closestPlayer);
 
 			playerHealth = GetComponent<Player1Stats>().playerHealth;
 			maxPlayerHealth = GetComponent<Player1Stats>().maxPlayerHealth;
@@ -87,5 +102,30 @@ public class Ability1_1 : MonoBehaviour
 		}
 
 		particleSys.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+	}
+
+	char ClosestPlayer(Vector3 particlePosition)
+    {
+		//Unable to get specific collider from each trigger using particle trigger module, hence this workaround
+		//Finds closest player to particle
+		FighterDistance = (particleSys.trigger.GetCollider(0).gameObject.transform.position - particlePosition).magnitude;
+		WizardDistance = (particleSys.trigger.GetCollider(1).gameObject.transform.position - particlePosition).magnitude;
+		RogueDistance = (particleSys.trigger.GetCollider(2).gameObject.transform.position - particlePosition).magnitude;
+		minDistance = Mathf.Min(FighterDistance, WizardDistance, RogueDistance);
+
+		if (minDistance == FighterDistance)
+        {
+			closestPlayer = 'f';
+        }
+		else if (minDistance == WizardDistance)
+		{
+			closestPlayer = 'w';
+		}
+        else if (minDistance == RogueDistance)
+        {
+			closestPlayer = 'r';
+        }
+
+		return closestPlayer;
 	}
 }

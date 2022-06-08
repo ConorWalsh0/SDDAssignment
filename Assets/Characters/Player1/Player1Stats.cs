@@ -2,28 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Stats : MonoBehaviour
+public class Player1Stats : Players
 {
 	//general stats
-	public int playerHealth;
-	public int maxPlayerHealth;
-	public int playerDamage;
-	private int playerArmour;
-	public float playerSpeedModifier;
 	private float invincibilityTime = 0;
-	private float knockback;
 
-	//ability 1_1 stats
+	//Healing info
 	public int particleHealth;
 	private int partialHeal;
 
 	//external objects
-	private GameObject RespawnPoint;
-	private GameObject Menu_LevelUp1;
-	private GameObject Enemy1;
-	private int enemy1Damage;
+	
 	private Rigidbody2D rb2D;
 	private char Player1Class;
+
+	public void FighterSelected()
+	{
+		Debug.Log("FighterSelected");
+	}
+
+	public void WizardSelected()
+	{
+		Debug.Log("WizardSelected");
+	}
+
+	public void RogueSelected()
+	{
+		Debug.Log("RogueSelected");
+	}
 
 	void Awake()
 	{
@@ -32,22 +38,15 @@ public class Player1Stats : MonoBehaviour
 
 	void Start()
 	{
-		Menu_LevelUp1 = GameObject.Find("Main Camera").GetComponent<CameraFollow>().Menu_LevelUp1;
-		Player1Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().Player1CharacterSelect;
+		Player1Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().player1CharacterSelect;
 
-
-
-		maxPlayerHealth = 100;
-		playerHealth = maxPlayerHealth;
-		particleHealth = 5;
-		playerDamage = 30;
-		playerSpeedModifier = 1f;
-
-		RespawnPoint = GameObject.Find("RespawnPoint");
-		playerArmour = 0;
-		knockback = 50f;
-		Enemy1 = GameObject.Find("Enemy1");
-		enemy1Damage = 1;// Enemy1.GetComponent<Enemy1Behaviour>().enemyDamage;
+		this.maxPlayerHealth = 100;
+		this.playerHealth = maxPlayerHealth;
+		this.particleHealth = 5;
+		this.playerDamage = 30;
+		this.playerSpeedModifier = 1f;
+		this.playerArmour = 0;
+		this.knockback = 50f;		
 	}
 
 	void Update()
@@ -62,30 +61,9 @@ public class Player1Stats : MonoBehaviour
 	{
 		if (collision.collider.tag == "EnemyHitbox" && invincibilityTime <= 0f)
 		{
-			//Knockback
-			Vector2 enemyPos = collision.transform.position;
-			Vector2 origin = gameObject.transform.position;
-			Vector2 direction = origin - enemyPos;
-			direction.Normalize();
-			direction.y += 1f;
-			rb2D.AddForce(new Vector2(knockback * direction.x * playerSpeedModifier, knockback * direction.y * playerSpeedModifier), ForceMode2D.Impulse);
+			Knockback(collision, gameObject, rb2D, knockback, playerSpeedModifier);
 
-			gameObject.GetComponent<Ability1_1>().HealthParticleEmission();
-
-			if (enemy1Damage - playerArmour < 0)
-			{
-				playerHealth -= 1;
-			}
-			else
-			{
-				playerHealth -= (enemy1Damage - playerArmour);
-			}
-
-			if (playerHealth <= 0)
-			{
-				gameObject.SetActive(false);
-				GameOver();
-			}
+			PlayerDamageTaken(collision, gameObject, playerArmour, playerHealth, maxPlayerHealth);
 
 			Debug.Log("Player damaged by " + collision.collider.name);
 			invincibilityTime = 0.4f;
@@ -97,20 +75,8 @@ public class Player1Stats : MonoBehaviour
     {
 		if (collision.gameObject.tag == "LevelGoal")
         {
-			LevelFinished();
+			LevelFinish();
         }
-    }
-
-	void GameOver()
-    {
-		playerHealth = maxPlayerHealth;
-		RespawnPoint.GetComponent<Respawn>().PlayerRespawn();
-	}
-
-	void LevelFinished()
-    {
-		Debug.Log("yay");
-		Menu_LevelUp1.SetActive(true);
     }
 
 	public void Ability1_1Unlock()
