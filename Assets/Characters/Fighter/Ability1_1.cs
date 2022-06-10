@@ -34,11 +34,11 @@ public class Ability1_1 : MonoBehaviour
 
 	public void Ability1_1Setup()
     {
-		if (gameObject.GetComponent<Player1Stats>().isActiveAndEnabled == true)
+		if (gameObject.GetComponent<Player1Stats>() != null)
 		{
 			Player1 = this.gameObject;
 		}
-		else if (gameObject.GetComponent<Player2Stats>().isActiveAndEnabled == true)
+		else if (gameObject.GetComponent<Player2Stats>() != null)
 		{
 			Player2 = this.gameObject;
 		}
@@ -51,7 +51,6 @@ public class Ability1_1 : MonoBehaviour
 		WizardClass = GameObject.Find("WizardClass");
 		RogueClass = GameObject.Find("RogueClass");
 		CharacterCreation = GameObject.Find("CharacterCreation");
-		Debug.Log(CharacterCreation);
 	}
 
 	void Update()
@@ -128,7 +127,7 @@ public class Ability1_1 : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.collider.tag == "EnemyHitbox" && invincibilityTime <= 0f)
+		if (collision.collider.tag == "Enemy1Hitbox" && invincibilityTime <= 0f)
 		{
 			HealthParticleEmission();
 			invincibilityTime = 0.4f;
@@ -145,9 +144,8 @@ public class Ability1_1 : MonoBehaviour
 		{
 			ParticleSystem.Particle p = enter[i];
 			ClosestPlayer(p.position);
-			Debug.Log(closestPlayer);
 
-			Debug.Log(CharacterCreation);
+			//Accesses health info from the closest player to the health particle
 			if (CharacterCreation.GetComponent<CharacterCreation>().player1CharacterSelect == closestPlayer) //Could use lvlStartPlayer1/2 and a check on active components instead
             {
 				switch (closestPlayer)
@@ -185,23 +183,41 @@ public class Ability1_1 : MonoBehaviour
 						break;
 				}
 			}
-
-			if (playerHealth < maxPlayerHealth)
+			
+			if (playerHealth < maxPlayerHealth) //Checks if player can be healed, then deletes the healing particle and initiates healing on the appropriate player
             {
 				p.remainingLifetime = 0f;
 				switch (closestPlayer)
                 {
 					case 'f':
-						FighterClass.GetComponent<Player1Stats>().ParticleHeal();
-						FighterClass.GetComponent<Player2Stats>().ParticleHeal();
+						if (FighterClass.GetComponent<Player1Stats>() != null)
+                        {
+							FighterClass.GetComponent<Player1Stats>().ParticleHeal();
+						}
+                        else
+                        {
+							FighterClass.GetComponent<Player2Stats>().ParticleHeal();
+						}
 						break;
 					case 'w':
-						WizardClass.GetComponent<Player1Stats>().ParticleHeal();
-						WizardClass.GetComponent<Player2Stats>().ParticleHeal();
+						if (WizardClass.GetComponent<Player1Stats>() != null)
+						{
+							WizardClass.GetComponent<Player1Stats>().ParticleHeal();
+						}
+						else
+						{
+							WizardClass.GetComponent<Player2Stats>().ParticleHeal();
+						}
 						break;
 					case 'r':
-						RogueClass.GetComponent<Player1Stats>().ParticleHeal();
-						RogueClass.GetComponent<Player2Stats>().ParticleHeal();
+						if (RogueClass.GetComponent<Player1Stats>() != null)
+						{
+							RogueClass.GetComponent<Player1Stats>().ParticleHeal();
+						}
+						else
+						{
+							RogueClass.GetComponent<Player2Stats>().ParticleHeal();
+						}
 						break;
 				}
 			}

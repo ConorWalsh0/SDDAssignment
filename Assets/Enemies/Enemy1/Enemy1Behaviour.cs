@@ -74,7 +74,7 @@ public class Enemy1Behaviour : Enemy
 
 		if (collision.collider.tag == "PlayerHitbox" && invincibilityTime <= 0f)
 		{
-			EnemyDamageTaken(collision, gameObject, Player1, Player2, enemyHealth);
+			enemyHealth = EnemyDamageTaken(collision, gameObject, Player1, Player2, enemyHealth);
 
 			if (enemyHealth <= 0)
 			{

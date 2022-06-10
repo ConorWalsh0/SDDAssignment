@@ -48,6 +48,8 @@ public class LevelManager : MonoBehaviour
                 LvlStartPlayer1.GetComponent<Player1Stats>().RogueSelected();
                 break;
         }
+        Destroy(LvlStartPlayer1.GetComponent<Player2Stats>());
+        Destroy(LvlStartPlayer1.GetComponent<Player2Movement>());
 
         switch (player2CharacterSelect)
         {
@@ -70,6 +72,8 @@ public class LevelManager : MonoBehaviour
                 LvlStartPlayer2.GetComponent<Player2Stats>().RogueSelected();
                 break;
         }
+        Destroy(LvlStartPlayer2.GetComponent<Player1Stats>());
+        Destroy(LvlStartPlayer2.GetComponent<Player1Movement>());
 
         GameObject.Find("EnemyManager").GetComponent<Enemy>().Player1 = LvlStartPlayer1;
         GameObject.Find("EnemyManager").GetComponent<Enemy>().Player2 = LvlStartPlayer2;
@@ -77,6 +81,7 @@ public class LevelManager : MonoBehaviour
 
         if (player1CharacterSelect == 'f' || player2CharacterSelect == 'f')
         {
+            GameObject.Find("FighterClass").GetComponent<Ability0_1>().Ability0_1Setup();
             GameObject.Find("FighterClass").GetComponent<Ability1_1>().Ability1_1Setup();
         }
     }

@@ -5,13 +5,12 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
 
-    private GameObject Enemy1;
-    private int Enemy1Damage;
+    public GameObject Enemy1Hitbox;
+    private int enemy1Damage;
 
     void Start()
     {
-        Enemy1 = GameObject.Find("Enemy1");
-        Enemy1Damage = 30;
+        enemy1Damage = 30;
     }
 
     void Update()
@@ -23,11 +22,12 @@ public class EnemyStats : MonoBehaviour
     {
         if (enemyGameObject == null)
         {
+            Debug.Log("enemygameobject is null, check EnemyStats.cs");
             return 0;
         }
-        else if (enemyGameObject == Enemy1)
+        else if (enemyGameObject.tag == "Enemy1Hitbox")
         {
-            return Enemy1Damage;
+            return enemy1Damage;
         }
         else
         {

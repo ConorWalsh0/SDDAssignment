@@ -36,12 +36,10 @@ public class Players : MonoBehaviour
         rb2D.AddForce(new Vector2(knockback * direction.x * playerSpeedModifier, knockback * direction.y * playerSpeedModifier), ForceMode2D.Impulse);
     }
 
-    public void PlayerDamageTaken(Collision2D collision, GameObject playerGameObject, int playerArmour, int playerHealth, int maxPlayerHealth)
+    public int PlayerDamageTaken(Collision2D collision, GameObject playerGameObject, int playerArmour, int playerHealth, int maxPlayerHealth) //enemydamage currently zero, but is instantly killing player
     {
-        Debug.Log(RespawnPoint);
-
-        enemyDamage = EnemyManager.GetComponent<EnemyStats>().RetrieveEnemyDamage(collision.gameObject); //finds the gameObject associated with the player collision
-        if (enemyDamage - playerArmour < 0)                                                              //and finds the gameObject's damage if an enemy
+        enemyDamage = EnemyManager.GetComponent<EnemyStats>().RetrieveEnemyDamage(collision.collider.gameObject); //finds the gameObject associated with the player collision
+        if (enemyDamage - playerArmour < 0)                                                                       //and finds the gameObject's damage if an enemy
         {
             playerHealth -= 1;
         }
@@ -53,14 +51,16 @@ public class Players : MonoBehaviour
         if (playerHealth <= 0)
         {
             playerGameObject.SetActive(false);
-            Respawn(playerHealth, maxPlayerHealth, playerGameObject);
+            playerHealth = Respawn(playerHealth, maxPlayerHealth, playerGameObject);
         }
+
+        return playerHealth;
     }
 
     public int Respawn(int playerHealth, int maxPlayerHealth, GameObject Player)
     {
-        playerHealth = maxPlayerHealth;
         RespawnPoint.GetComponent<Respawn>().PlayerRespawn(Player);
+        playerHealth = maxPlayerHealth;
         return playerHealth;
     }
 

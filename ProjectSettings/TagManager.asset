@@ -5,13 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
-  - EnemyHurtbox
-  - EnemyHitbox
   - PlayerHurtbox
   - PlayerHitbox
   - LevelGoal
   - PhysParticles
   - Particles
+  - Undefined
+  - Enemy1Hurtbox
+  - Enemy1Hitbox
   layers:
   - Default
   - TransparentFX

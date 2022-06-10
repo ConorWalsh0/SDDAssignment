@@ -7,9 +7,11 @@ public class Ability0_1 : MonoBehaviour
 {
     public Animator animator;
     private Controls controls;
-    private int player1Damage;
+    private int playerDamage;
     public int ability0_1Damage;
     private float delay;
+    private GameObject LvlStartPlayer1;
+    private GameObject MainCamera;
 
     void Awake()
     {
@@ -17,10 +19,23 @@ public class Ability0_1 : MonoBehaviour
         controls.Gameplay.Ability0_1.performed += Ability0_1Performed;
     }
 
+    public void Ability0_1Setup()
+    {
+        MainCamera = GameObject.Find("Main Camera");
+        LvlStartPlayer1 = MainCamera.GetComponent<LevelManager>().LvlStartPlayer1;
+        if (LvlStartPlayer1 == gameObject)
+        {
+            playerDamage = gameObject.GetComponent<Player1Stats>().playerDamage;
+        }
+        else
+        {
+            playerDamage = gameObject.GetComponent<Player2Stats>().playerDamage;
+        }
+    }
+
     void Start()
     {
-        player1Damage = gameObject.GetComponent<Player1Stats>().playerDamage;
-        ability0_1Damage = player1Damage;
+        ability0_1Damage = playerDamage;
         delay = 0f;
     }
 

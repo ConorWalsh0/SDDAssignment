@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player2Stats : Players
 {
@@ -15,6 +16,7 @@ public class Player2Stats : Players
 
 	private Rigidbody2D rb2D;
 	private char Player2Class;
+	private GameObject HPBarFront2;
 
 	public void FighterSelected()
 	{
@@ -39,6 +41,7 @@ public class Player2Stats : Players
 	void Start()
 	{
 		Player2Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().player2CharacterSelect;
+		HPBarFront2 = GameObject.Find("HPBarFront2");
 
 		this.maxPlayerHealth = 100;
 		this.playerHealth = maxPlayerHealth;
@@ -54,21 +57,28 @@ public class Player2Stats : Players
 		if (invincibilityTime > 0f)
 		{
 			invincibilityTime -= Time.deltaTime;
-		}
+		}		
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.collider.tag == "EnemyHitbox" && invincibilityTime <= 0f)
+		if (collision.collider.tag == "Enemy1Hitbox" && invincibilityTime <= 0f)
 		{
 			Knockback(collision, gameObject, rb2D, knockback, playerSpeedModifier);
 
-			PlayerDamageTaken(collision, gameObject, playerArmour, playerHealth, maxPlayerHealth);
+			playerHealth = PlayerDamageTaken(collision, gameObject, playerArmour, playerHealth, maxPlayerHealth);
+
+			HealthBarUpdate();
 
 			Debug.Log("Player damaged by " + collision.collider.name);
 			invincibilityTime = 0.4f;
 			Debug.Log(playerHealth);
 		}
+	}
+
+	void HealthBarUpdate()
+	{
+		HPBarFront2.GetComponent<Image>().fillAmount = ((float)playerHealth / (float)maxPlayerHealth);
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
@@ -100,6 +110,7 @@ public class Player2Stats : Players
 		{
 			playerHealth += particleHealth;
 		}
+		HealthBarUpdate();
 	}
 
 	public void Ability2_1Unlock()
