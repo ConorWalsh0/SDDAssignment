@@ -16,6 +16,7 @@ public class Players : MonoBehaviour
     public GameObject RespawnPoint;
     public GameObject Menu_LevelUp1;
     private int enemyDamage;
+    public GameObject EnemyManager;
 
     public Vector2 PlayersMidpoint(GameObject P1, GameObject P2)
     {
@@ -37,8 +38,10 @@ public class Players : MonoBehaviour
 
     public void PlayerDamageTaken(Collision2D collision, GameObject playerGameObject, int playerArmour, int playerHealth, int maxPlayerHealth)
     {
-        enemyDamage = collision.gameObject.GetComponent<EnemyStats>().RetrieveEnemyDamage(collision.gameObject); //finds the gameObject associated with the player collision
-        if (enemyDamage - playerArmour < 0)                                                                      //and finds the gameObject's damage if an enemy
+        Debug.Log(RespawnPoint);
+
+        enemyDamage = EnemyManager.GetComponent<EnemyStats>().RetrieveEnemyDamage(collision.gameObject); //finds the gameObject associated with the player collision
+        if (enemyDamage - playerArmour < 0)                                                              //and finds the gameObject's damage if an enemy
         {
             playerHealth -= 1;
         }

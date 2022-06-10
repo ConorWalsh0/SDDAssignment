@@ -5,13 +5,16 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
 
-    private GameObject Enemy1; //maybe get gameObjects from Enemy parent class?
+    private GameObject Enemy1;
+    private int Enemy1Damage;
 
     void Start()
     {
+        Enemy1 = GameObject.Find("Enemy1");
+        Enemy1Damage = 30;
     }
 
-void Update()
+    void Update()
     {
         
     }
@@ -24,7 +27,7 @@ void Update()
         }
         else if (enemyGameObject == Enemy1)
         {
-            return 1;
+            return Enemy1Damage;
         }
         else
         {

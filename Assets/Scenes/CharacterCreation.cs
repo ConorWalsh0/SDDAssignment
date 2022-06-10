@@ -24,6 +24,8 @@ public class CharacterCreation : MonoBehaviour
         FighterClass.SetActive(true);
 
         //'\0' is default value of char variable
+        //Default value occurs if this is player's first choice
+        //further choices use switch statement to trigger behaviour depending on player's previous choice
         switch (player1CharacterSelect)
         {
             case '\0':

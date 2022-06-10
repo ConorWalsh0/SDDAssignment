@@ -1046,6 +1046,7 @@ MonoBehaviour:
   knockback: 0
   RespawnPoint: {fileID: 0}
   Menu_LevelUp1: {fileID: 0}
+  EnemyManager: {fileID: 0}
 --- !u!1 &520956104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1225,6 @@ GameObject:
   - component: {fileID: 563820233}
   - component: {fileID: 563820236}
   - component: {fileID: 563820235}
-  - component: {fileID: 563820237}
   m_Layer: 9
   m_Name: FighterClass
   m_TagString: PlayerHurtbox
@@ -1487,8 +1487,9 @@ MonoBehaviour:
   playerArmour: 0
   playerSpeedModifier: 0
   knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
+  RespawnPoint: {fileID: 775274250}
+  Menu_LevelUp1: {fileID: 461222578}
+  EnemyManager: {fileID: 887269334}
   particleHealth: 0
 --- !u!114 &563820231
 MonoBehaviour:
@@ -6376,8 +6377,9 @@ MonoBehaviour:
   playerArmour: 0
   playerSpeedModifier: 0
   knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
+  RespawnPoint: {fileID: 775274250}
+  Menu_LevelUp1: {fileID: 461222578}
+  EnemyManager: {fileID: 887269334}
   particleHealth: 0
 --- !u!114 &563820236
 MonoBehaviour:
@@ -6391,36 +6393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6015142792a2438effd61cb893ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersMidpoint: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  maxPlayerHealth: 0
-  playerDamage: 0
-  playerArmour: 0
-  playerSpeedModifier: 0
-  knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
---- !u!114 &563820237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563820220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44c3afc87bdae8438088f6b6a3b4601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playersMidpoint: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  maxPlayerHealth: 0
-  playerDamage: 0
-  playerArmour: 0
-  playerSpeedModifier: 0
-  knockback: 0
-  RespawnPoint: {fileID: 775274250}
-  Menu_LevelUp1: {fileID: 461222578}
 --- !u!1 &571479105
 GameObject:
   m_ObjectHideFlags: 0
@@ -8775,7 +8747,6 @@ GameObject:
   - component: {fileID: 1582816927}
   - component: {fileID: 1582816940}
   - component: {fileID: 1582816939}
-  - component: {fileID: 1582816941}
   m_Layer: 9
   m_Name: WizardClass
   m_TagString: PlayerHurtbox
@@ -13679,8 +13650,9 @@ MonoBehaviour:
   playerArmour: 0
   playerSpeedModifier: 0
   knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
+  RespawnPoint: {fileID: 775274250}
+  Menu_LevelUp1: {fileID: 461222578}
+  EnemyManager: {fileID: 887269334}
   particleHealth: 0
 --- !u!114 &1582816931
 MonoBehaviour:
@@ -13923,8 +13895,9 @@ MonoBehaviour:
   playerArmour: 0
   playerSpeedModifier: 0
   knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
+  RespawnPoint: {fileID: 775274250}
+  Menu_LevelUp1: {fileID: 461222578}
+  EnemyManager: {fileID: 887269334}
   particleHealth: 0
 --- !u!114 &1582816940
 MonoBehaviour:
@@ -13938,36 +13911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6015142792a2438effd61cb893ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersMidpoint: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  maxPlayerHealth: 0
-  playerDamage: 0
-  playerArmour: 0
-  playerSpeedModifier: 0
-  knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
---- !u!114 &1582816941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582816924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44c3afc87bdae8438088f6b6a3b4601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playersMidpoint: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  maxPlayerHealth: 0
-  playerDamage: 0
-  playerArmour: 0
-  playerSpeedModifier: 0
-  knockback: 0
-  RespawnPoint: {fileID: 775274250}
-  Menu_LevelUp1: {fileID: 461222578}
 --- !u!1 &1681020288
 GameObject:
   m_ObjectHideFlags: 0
@@ -14481,7 +14424,6 @@ GameObject:
   - component: {fileID: 2048906323}
   - component: {fileID: 2048906336}
   - component: {fileID: 2048906335}
-  - component: {fileID: 2048906337}
   m_Layer: 9
   m_Name: RogueClass
   m_TagString: PlayerHurtbox
@@ -19385,8 +19327,9 @@ MonoBehaviour:
   playerArmour: 0
   playerSpeedModifier: 0
   knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
+  RespawnPoint: {fileID: 775274250}
+  Menu_LevelUp1: {fileID: 461222578}
+  EnemyManager: {fileID: 887269334}
   particleHealth: 0
 --- !u!114 &2048906327
 MonoBehaviour:
@@ -19629,8 +19572,9 @@ MonoBehaviour:
   playerArmour: 0
   playerSpeedModifier: 0
   knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
+  RespawnPoint: {fileID: 775274250}
+  Menu_LevelUp1: {fileID: 461222578}
+  EnemyManager: {fileID: 887269334}
   particleHealth: 0
 --- !u!114 &2048906336
 MonoBehaviour:
@@ -19644,36 +19588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6015142792a2438effd61cb893ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersMidpoint: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  maxPlayerHealth: 0
-  playerDamage: 0
-  playerArmour: 0
-  playerSpeedModifier: 0
-  knockback: 0
-  RespawnPoint: {fileID: 0}
-  Menu_LevelUp1: {fileID: 0}
---- !u!114 &2048906337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048906320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44c3afc87bdae8438088f6b6a3b4601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playersMidpoint: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  maxPlayerHealth: 0
-  playerDamage: 0
-  playerArmour: 0
-  playerSpeedModifier: 0
-  knockback: 0
-  RespawnPoint: {fileID: 775274250}
-  Menu_LevelUp1: {fileID: 461222578}
 --- !u!1 &2061241223
 GameObject:
   m_ObjectHideFlags: 0

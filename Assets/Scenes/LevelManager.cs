@@ -74,6 +74,11 @@ public class LevelManager : MonoBehaviour
         GameObject.Find("EnemyManager").GetComponent<Enemy>().Player1 = LvlStartPlayer1;
         GameObject.Find("EnemyManager").GetComponent<Enemy>().Player2 = LvlStartPlayer2;
         GameObject.Find("EnemyManager").GetComponent<EnemySpawn>().EnemyPlace();
+
+        if (player1CharacterSelect == 'f' || player2CharacterSelect == 'f')
+        {
+            GameObject.Find("FighterClass").GetComponent<Ability1_1>().Ability1_1Setup();
+        }
     }
 
     public void ContinueNextLevel()

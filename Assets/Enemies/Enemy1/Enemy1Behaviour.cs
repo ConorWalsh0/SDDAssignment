@@ -13,7 +13,7 @@ public class Enemy1Behaviour : Enemy
 	{
 		this.invincibilityTime = 0f;
 		this.enemyHealth = 100;
-		this.enemyDamage = 30;
+		this.enemyDamage = 30; //Individual damage may be unnecessary depending on future implementation
 		this.enemySpeed = 110f;
 		this.enemyJumpHeight = 120f;
 		this.enemyTargetDirection = 1f;

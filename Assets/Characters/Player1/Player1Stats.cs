@@ -46,7 +46,7 @@ public class Player1Stats : Players
 		this.playerDamage = 30;
 		this.playerSpeedModifier = 1f;
 		this.playerArmour = 0;
-		this.knockback = 50f;		
+		this.knockback = 50f;
 	}
 
 	void Update()
