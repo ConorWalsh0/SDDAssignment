@@ -24,33 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Ability0_1",
-                    "type": "Button",
-                    "id": "3faa5091-a9b5-4de6-9bfe-4b4defdf4460",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ability1_1",
-                    "type": "Button",
-                    "id": "1ebddc6f-6211-4691-adce-a59827a8ea78",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ability2_1",
-                    "type": "Button",
-                    "id": "fce4fbb8-a91f-439f-8157-2cc68e72721a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Movement2",
                     "type": "Value",
                     "id": "3734ea4f-bef2-4757-a262-1d78278d5b54",
@@ -69,9 +42,54 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Ability0_1",
+                    "type": "Button",
+                    "id": "3faa5091-a9b5-4de6-9bfe-4b4defdf4460",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability1_1",
+                    "type": "Button",
+                    "id": "1ebddc6f-6211-4691-adce-a59827a8ea78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability0_2",
+                    "type": "Button",
+                    "id": "df1bbaf7-4717-42f9-a856-7937f6aa6a8c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Ability1_2",
                     "type": "Button",
                     "id": "59bfc0ee-3eaf-436f-88c8-4db0e1607937",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability0_3",
+                    "type": "Button",
+                    "id": "b2c48c0f-b7ae-43f9-8253-c5be6380e8ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability1_3",
+                    "type": "Button",
+                    "id": "95252ebe-8807-4b3f-b693-b01aeeeeaddc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -157,22 +175,11 @@
                 {
                     "name": "",
                     "id": "1ef9f054-f69a-4b69-8066-fedf09209961",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/e",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Ability1_2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "79d2465d-51c9-4f4a-b255-6ff23407a540",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Ability0_1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -200,6 +207,39 @@
                 },
                 {
                     "name": "",
+                    "id": "962b026c-8b77-4617-bf06-77c3d9803967",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Ability0_3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c96a68f2-996a-41cc-ba3a-3d86ab830625",
+                    "path": "<Keyboard>/comma",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Ability1_3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a07460ce-6635-43b8-9bc8-b514fae86912",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Ability0_2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "73a40c62-4252-43a9-b2f1-9c78b2581815",
                     "path": "<Keyboard>/escape",
                     "interactions": "Press",
@@ -213,7 +253,7 @@
                     "name": "",
                     "id": "d39b3f4e-be56-4290-acba-4fcc8ad67f96",
                     "path": "<Keyboard>/comma",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Ability1_1",
@@ -222,12 +262,12 @@
                 },
                 {
                     "name": "",
-                    "id": "2e33c51b-10ca-4d6f-9509-3cf1a1145810",
-                    "path": "<Keyboard>/comma",
-                    "interactions": "",
+                    "id": "79d2465d-51c9-4f4a-b255-6ff23407a540",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Ability2_1",
+                    "action": "Ability0_1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

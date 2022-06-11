@@ -51,9 +51,24 @@ public class Ability0_1 : MonoBehaviour
     {
         controls.Gameplay.Enable();
     }
-    
+
+    public InputActionReference triggerAction;
+
     void Ability0_1Performed(InputAction.CallbackContext context)
     {
+        if (LvlStartPlayer1 == gameObject) //Rebinds keys so that abilities match the player's bindings
+        {
+            InputBinding binding = triggerAction.action.bindings[0];
+            binding.overridePath = "<Keyboard>/#(downArrow)";
+            triggerAction.action.ApplyBindingOverride(0, binding);
+        }
+        else
+        {
+            InputBinding binding = triggerAction.action.bindings[0];
+            binding.overridePath = "<Keyboard>/#(s)";
+            triggerAction.action.ApplyBindingOverride(0, binding);
+        }
+
         if (delay <= 0f)
         {
             animator.SetTrigger("Ability0_1");

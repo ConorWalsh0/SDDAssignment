@@ -21,7 +21,14 @@ public class Enemy : MonoBehaviour
 	public float enemyTargetDirection;
 	public GameObject Player1;//Player1 & 2 assigned value on level start in LevelManager
 	public GameObject Player2;//
+	private GameObject WizardClass;
 
+	public void EnemyPlayerClassSetup()
+    {
+		WizardClass = GameObject.Find("WizardClass");
+    }
+
+	//Determines which player is attacking, and uses their respective damage to decrease enemy's health
 	public int EnemyDamageTaken(Collision2D collision, GameObject enemyGameObject, GameObject Player1, GameObject Player2, int enemyHealth)
 	{
 		Debug.Log(enemyGameObject + "damaged by " + collision.gameObject);
@@ -33,6 +40,12 @@ public class Enemy : MonoBehaviour
 		{
 			enemyHealth -= Player2.GetComponent<Player2Stats>().playerDamage;
 		}
+
+		if (collision.gameObject.transform.parent == WizardClass) //Destroys fireball
+        {
+			//Destroy(collision.collider.gameObject);
+        }
+
 		return enemyHealth;
 	}
 

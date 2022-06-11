@@ -15,6 +15,8 @@ public class CameraFollow : MonoBehaviour
     private bool cameraMobilised;
     private GameObject Player1;
     private GameObject Player2;
+    private Vector2 player1Movement;
+    private Vector2 player2Movement;
 
     void Awake()
     {
@@ -40,8 +42,17 @@ public class CameraFollow : MonoBehaviour
             return;
         }
 
+        if (Player1 == null || Player2 == null)
+        {
+            return;
+        }
+
         target = gameObject.GetComponent<Players>().PlayersMidpoint(Player1, Player2);
-        direction = controls.Gameplay.Movement1.ReadValue<Vector2>();
+
+        player1Movement = controls.Gameplay.Movement1.ReadValue<Vector2>();
+        player2Movement = controls.Gameplay.Movement2.ReadValue<Vector2>();
+        direction = new Vector2((player1Movement.x + player2Movement.x) / 2, (player1Movement.y + player2Movement.y) / 2); //Finds average movement of both players to direct camera sway
+
         Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target);
 
         if (direction.x > 0f)
@@ -57,8 +68,8 @@ public class CameraFollow : MonoBehaviour
             delta = target - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z));
         }
 
-        Vector3 destination = transform.position + delta;
-        transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+        Vector3 destination = transform.position + delta; //destination is current position of camera + midpoint of players
+        transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime); //Moves camera to destination smoothly
     }
 
     public void CameraMobilised()

@@ -46,33 +46,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability0_1"",
-                    ""type"": ""Button"",
-                    ""id"": ""3faa5091-a9b5-4de6-9bfe-4b4defdf4460"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability1_1"",
-                    ""type"": ""Button"",
-                    ""id"": ""1ebddc6f-6211-4691-adce-a59827a8ea78"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability2_1"",
-                    ""type"": ""Button"",
-                    ""id"": ""fce4fbb8-a91f-439f-8157-2cc68e72721a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Movement2"",
                     ""type"": ""Value"",
                     ""id"": ""3734ea4f-bef2-4757-a262-1d78278d5b54"",
@@ -91,9 +64,54 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Ability0_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""3faa5091-a9b5-4de6-9bfe-4b4defdf4460"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""1ebddc6f-6211-4691-adce-a59827a8ea78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability0_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""df1bbaf7-4717-42f9-a856-7937f6aa6a8c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Ability1_2"",
                     ""type"": ""Button"",
                     ""id"": ""59bfc0ee-3eaf-436f-88c8-4db0e1607937"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability0_3"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2c48c0f-b7ae-43f9-8253-c5be6380e8ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_3"",
+                    ""type"": ""Button"",
+                    ""id"": ""95252ebe-8807-4b3f-b693-b01aeeeeaddc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -179,22 +197,11 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1ef9f054-f69a-4b69-8066-fedf09209961"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Ability1_2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""79d2465d-51c9-4f4a-b255-6ff23407a540"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Ability0_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -222,6 +229,39 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""962b026c-8b77-4617-bf06-77c3d9803967"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c96a68f2-996a-41cc-ba3a-3d86ab830625"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability1_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a07460ce-6635-43b8-9bc8-b514fae86912"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""73a40c62-4252-43a9-b2f1-9c78b2581815"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": ""Press"",
@@ -235,7 +275,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""d39b3f4e-be56-4290-acba-4fcc8ad67f96"",
                     ""path"": ""<Keyboard>/comma"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Ability1_1"",
@@ -244,12 +284,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2e33c51b-10ca-4d6f-9509-3cf1a1145810"",
-                    ""path"": ""<Keyboard>/comma"",
-                    ""interactions"": """",
+                    ""id"": ""79d2465d-51c9-4f4a-b255-6ff23407a540"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Ability2_1"",
+                    ""action"": ""Ability0_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -335,12 +375,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement1 = m_Gameplay.FindAction("Movement1", throwIfNotFound: true);
         m_Gameplay_Jump1 = m_Gameplay.FindAction("Jump1", throwIfNotFound: true);
-        m_Gameplay_Ability0_1 = m_Gameplay.FindAction("Ability0_1", throwIfNotFound: true);
-        m_Gameplay_Ability1_1 = m_Gameplay.FindAction("Ability1_1", throwIfNotFound: true);
-        m_Gameplay_Ability2_1 = m_Gameplay.FindAction("Ability2_1", throwIfNotFound: true);
         m_Gameplay_Movement2 = m_Gameplay.FindAction("Movement2", throwIfNotFound: true);
         m_Gameplay_Jump2 = m_Gameplay.FindAction("Jump2", throwIfNotFound: true);
+        m_Gameplay_Ability0_1 = m_Gameplay.FindAction("Ability0_1", throwIfNotFound: true);
+        m_Gameplay_Ability1_1 = m_Gameplay.FindAction("Ability1_1", throwIfNotFound: true);
+        m_Gameplay_Ability0_2 = m_Gameplay.FindAction("Ability0_2", throwIfNotFound: true);
         m_Gameplay_Ability1_2 = m_Gameplay.FindAction("Ability1_2", throwIfNotFound: true);
+        m_Gameplay_Ability0_3 = m_Gameplay.FindAction("Ability0_3", throwIfNotFound: true);
+        m_Gameplay_Ability1_3 = m_Gameplay.FindAction("Ability1_3", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
@@ -406,12 +448,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Movement1;
     private readonly InputAction m_Gameplay_Jump1;
-    private readonly InputAction m_Gameplay_Ability0_1;
-    private readonly InputAction m_Gameplay_Ability1_1;
-    private readonly InputAction m_Gameplay_Ability2_1;
     private readonly InputAction m_Gameplay_Movement2;
     private readonly InputAction m_Gameplay_Jump2;
+    private readonly InputAction m_Gameplay_Ability0_1;
+    private readonly InputAction m_Gameplay_Ability1_1;
+    private readonly InputAction m_Gameplay_Ability0_2;
     private readonly InputAction m_Gameplay_Ability1_2;
+    private readonly InputAction m_Gameplay_Ability0_3;
+    private readonly InputAction m_Gameplay_Ability1_3;
     private readonly InputAction m_Gameplay_Pause;
     public struct GameplayActions
     {
@@ -419,12 +463,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public GameplayActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement1 => m_Wrapper.m_Gameplay_Movement1;
         public InputAction @Jump1 => m_Wrapper.m_Gameplay_Jump1;
-        public InputAction @Ability0_1 => m_Wrapper.m_Gameplay_Ability0_1;
-        public InputAction @Ability1_1 => m_Wrapper.m_Gameplay_Ability1_1;
-        public InputAction @Ability2_1 => m_Wrapper.m_Gameplay_Ability2_1;
         public InputAction @Movement2 => m_Wrapper.m_Gameplay_Movement2;
         public InputAction @Jump2 => m_Wrapper.m_Gameplay_Jump2;
+        public InputAction @Ability0_1 => m_Wrapper.m_Gameplay_Ability0_1;
+        public InputAction @Ability1_1 => m_Wrapper.m_Gameplay_Ability1_1;
+        public InputAction @Ability0_2 => m_Wrapper.m_Gameplay_Ability0_2;
         public InputAction @Ability1_2 => m_Wrapper.m_Gameplay_Ability1_2;
+        public InputAction @Ability0_3 => m_Wrapper.m_Gameplay_Ability0_3;
+        public InputAction @Ability1_3 => m_Wrapper.m_Gameplay_Ability1_3;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -441,24 +487,30 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Jump1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump1;
                 @Jump1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump1;
                 @Jump1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump1;
-                @Ability0_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
-                @Ability0_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
-                @Ability0_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
-                @Ability1_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
-                @Ability1_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
-                @Ability1_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
-                @Ability2_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility2_1;
-                @Ability2_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility2_1;
-                @Ability2_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility2_1;
                 @Movement2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement2;
                 @Movement2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement2;
                 @Movement2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement2;
                 @Jump2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump2;
                 @Jump2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump2;
                 @Jump2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump2;
+                @Ability0_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
+                @Ability0_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
+                @Ability0_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
+                @Ability1_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
+                @Ability1_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
+                @Ability1_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
+                @Ability0_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2;
+                @Ability0_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2;
+                @Ability0_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2;
                 @Ability1_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2;
                 @Ability1_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2;
                 @Ability1_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2;
+                @Ability0_3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3;
+                @Ability0_3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3;
+                @Ability0_3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3;
+                @Ability1_3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3;
+                @Ability1_3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3;
+                @Ability1_3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3;
                 @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
@@ -472,24 +524,30 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Jump1.started += instance.OnJump1;
                 @Jump1.performed += instance.OnJump1;
                 @Jump1.canceled += instance.OnJump1;
-                @Ability0_1.started += instance.OnAbility0_1;
-                @Ability0_1.performed += instance.OnAbility0_1;
-                @Ability0_1.canceled += instance.OnAbility0_1;
-                @Ability1_1.started += instance.OnAbility1_1;
-                @Ability1_1.performed += instance.OnAbility1_1;
-                @Ability1_1.canceled += instance.OnAbility1_1;
-                @Ability2_1.started += instance.OnAbility2_1;
-                @Ability2_1.performed += instance.OnAbility2_1;
-                @Ability2_1.canceled += instance.OnAbility2_1;
                 @Movement2.started += instance.OnMovement2;
                 @Movement2.performed += instance.OnMovement2;
                 @Movement2.canceled += instance.OnMovement2;
                 @Jump2.started += instance.OnJump2;
                 @Jump2.performed += instance.OnJump2;
                 @Jump2.canceled += instance.OnJump2;
+                @Ability0_1.started += instance.OnAbility0_1;
+                @Ability0_1.performed += instance.OnAbility0_1;
+                @Ability0_1.canceled += instance.OnAbility0_1;
+                @Ability1_1.started += instance.OnAbility1_1;
+                @Ability1_1.performed += instance.OnAbility1_1;
+                @Ability1_1.canceled += instance.OnAbility1_1;
+                @Ability0_2.started += instance.OnAbility0_2;
+                @Ability0_2.performed += instance.OnAbility0_2;
+                @Ability0_2.canceled += instance.OnAbility0_2;
                 @Ability1_2.started += instance.OnAbility1_2;
                 @Ability1_2.performed += instance.OnAbility1_2;
                 @Ability1_2.canceled += instance.OnAbility1_2;
+                @Ability0_3.started += instance.OnAbility0_3;
+                @Ability0_3.performed += instance.OnAbility0_3;
+                @Ability0_3.canceled += instance.OnAbility0_3;
+                @Ability1_3.started += instance.OnAbility1_3;
+                @Ability1_3.performed += instance.OnAbility1_3;
+                @Ability1_3.canceled += instance.OnAbility1_3;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -543,12 +601,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     {
         void OnMovement1(InputAction.CallbackContext context);
         void OnJump1(InputAction.CallbackContext context);
-        void OnAbility0_1(InputAction.CallbackContext context);
-        void OnAbility1_1(InputAction.CallbackContext context);
-        void OnAbility2_1(InputAction.CallbackContext context);
         void OnMovement2(InputAction.CallbackContext context);
         void OnJump2(InputAction.CallbackContext context);
+        void OnAbility0_1(InputAction.CallbackContext context);
+        void OnAbility1_1(InputAction.CallbackContext context);
+        void OnAbility0_2(InputAction.CallbackContext context);
         void OnAbility1_2(InputAction.CallbackContext context);
+        void OnAbility0_3(InputAction.CallbackContext context);
+        void OnAbility1_3(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
     public interface IMenuActions

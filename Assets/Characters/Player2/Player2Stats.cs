@@ -7,6 +7,7 @@ public class Player2Stats : Players
 {
 	//general stats
 	private float invincibilityTime = 0;
+	private char player2Class;
 
 	//Healing info
 	public int particleHealth;
@@ -15,7 +16,6 @@ public class Player2Stats : Players
 	//external objects
 
 	private Rigidbody2D rb2D;
-	private char Player2Class;
 	private GameObject HPBarFront2;
 
 	public void FighterSelected()
@@ -40,7 +40,7 @@ public class Player2Stats : Players
 
 	void Start()
 	{
-		Player2Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().player2CharacterSelect;
+		player2Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().player2CharacterSelect;
 		HPBarFront2 = GameObject.Find("HPBarFront2");
 
 		this.maxPlayerHealth = 100;
@@ -115,7 +115,7 @@ public class Player2Stats : Players
 
 	public void Ability2_1Unlock()
 	{
-		gameObject.GetComponent<Ability2_1>().enabled = true;
+		//gameObject.GetComponent<Ability2_1>().enabled = true;
 	}
 
 }

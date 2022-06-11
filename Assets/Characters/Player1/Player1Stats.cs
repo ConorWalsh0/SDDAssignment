@@ -7,6 +7,7 @@ public class Player1Stats : Players
 {
 	//general stats
 	private float invincibilityTime = 0;
+	private char player1Class;
 
 	//Healing info
 	public int particleHealth;
@@ -15,7 +16,6 @@ public class Player1Stats : Players
 	//external objects
 	
 	private Rigidbody2D rb2D;
-	private char Player1Class;
 	private GameObject HPBarFront1;
 
 	public void FighterSelected()
@@ -40,7 +40,7 @@ public class Player1Stats : Players
 
 	void Start()
 	{
-		Player1Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().player1CharacterSelect;
+		player1Class = GameObject.Find("CharacterCreation").GetComponent<CharacterCreation>().player1CharacterSelect;
 		HPBarFront1 = GameObject.Find("HPBarFront1");
 
 		this.maxPlayerHealth = 100;
@@ -74,6 +74,11 @@ public class Player1Stats : Players
 			invincibilityTime = 0.4f;
 			Debug.Log(playerHealth);
 		}
+
+		if (collision.collider.tag == "Platform" && player1Class == 'w')
+        {
+			//print(collision.otherRigidbody); //TODO: delete fireball on contact with terrain
+        }
 	}
 
 	void HealthBarUpdate()
@@ -116,6 +121,6 @@ public class Player1Stats : Players
 
 	public void Ability2_1Unlock()
 	{
-		gameObject.GetComponent<Ability2_1>().enabled = true;
+		//gameObject.GetComponent<Ability2_1>().enabled = true;
 	}
 }

@@ -12,7 +12,7 @@ public class Player1Movement : MonoBehaviour
 	private Vector2 moveHorizontal;
 	private Controls controls;
 	private float xComponent;
-	private bool facingRight = true;
+	public bool facingRight = true;
 	private float speedModifier;
 	private float jumpModifier;
 

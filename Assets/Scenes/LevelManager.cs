@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject LvlStartPlayer2;
     private GameObject CharacterCreation;
     private GameObject RespawnPoint;
+    private GameObject EnemyManager;
 
     void Start()
     {
@@ -75,14 +76,22 @@ public class LevelManager : MonoBehaviour
         Destroy(LvlStartPlayer2.GetComponent<Player1Stats>());
         Destroy(LvlStartPlayer2.GetComponent<Player1Movement>());
 
-        GameObject.Find("EnemyManager").GetComponent<Enemy>().Player1 = LvlStartPlayer1;
-        GameObject.Find("EnemyManager").GetComponent<Enemy>().Player2 = LvlStartPlayer2;
-        GameObject.Find("EnemyManager").GetComponent<EnemySpawn>().EnemyPlace();
+        EnemyManager = GameObject.Find("EnemyManager");
+        EnemyManager.GetComponent<Enemy>().Player1 = LvlStartPlayer1;
+        EnemyManager.GetComponent<Enemy>().Player2 = LvlStartPlayer2;
+        EnemyManager.GetComponent<EnemySpawn>().EnemyPlace();
+        EnemyManager.GetComponent<Enemy>().EnemyPlayerClassSetup();
+        GameObject.Find("RespawnPoint").GetComponent<Respawn>().RespawnSetup();
 
         if (player1CharacterSelect == 'f' || player2CharacterSelect == 'f')
         {
             GameObject.Find("FighterClass").GetComponent<Ability0_1>().Ability0_1Setup();
             GameObject.Find("FighterClass").GetComponent<Ability1_1>().Ability1_1Setup();
+        }
+        if (player1CharacterSelect == 'w' || player2CharacterSelect == 'w')
+        {
+            GameObject.Find("WizardClass").GetComponent<Ability0_2>().Ability0_2Setup();
+            GameObject.Find("WizardClass").GetComponent<Ability1_2>().Ability1_2Setup();
         }
     }
 
