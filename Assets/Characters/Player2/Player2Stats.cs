@@ -87,6 +87,11 @@ public class Player2Stats : Players
 		{
 			LevelFinish();
 		}
+
+		if (collision.gameObject.tag == "FinalGoal")
+		{
+			GameFinish();
+		}
 	}
 
 	public void Ability1_1Unlock()
@@ -118,7 +123,7 @@ public class Player2Stats : Players
 		//gameObject.GetComponent<Ability2_1>().enabled = true;
 	}
 
-	public void Player2NextLevel()
+	public void Player2NextLevel() //pass through attributes here
     {
 		playerHealth = maxPlayerHealth;
 		HealthBarUpdate();

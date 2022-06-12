@@ -92,7 +92,11 @@ public class Player1Stats : Players
         {
 			LevelFinish();
         }
-    }
+		if (collision.gameObject.tag == "FinalGoal")
+		{
+			GameFinish();
+		}
+	}
 
 	public void Ability1_1Unlock()
     {
@@ -119,7 +123,7 @@ public class Player1Stats : Players
 		HealthBarUpdate();
     }
 
-	public void Player1NextLevel()
+	public void Player1NextLevel() //pass through attributes here?
 	{
 		playerHealth = maxPlayerHealth;
 		HealthBarUpdate();

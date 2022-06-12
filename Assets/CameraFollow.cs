@@ -12,6 +12,8 @@ public class CameraFollow : MonoBehaviour
     private Vector2 direction;
     private Vector3 delta;
     public GameObject Menu_LevelUp1;
+    public GameObject Credits;
+    public GameObject PauseMenu;
     private bool cameraMobilised;
     private GameObject Player1;
     private GameObject Player2;
@@ -28,6 +30,10 @@ public class CameraFollow : MonoBehaviour
         Menu_LevelUp1 = GameObject.Find("Menu_LevelUp1");
         Menu_LevelUp1.SetActive(false);
         cameraMobilised = false;
+        Credits = GameObject.Find("Credits");
+        Credits.SetActive(false);
+        PauseMenu = GameObject.Find("PauseMenu");
+        PauseMenu.SetActive(false);
     }
 
     void OnEnable()
@@ -51,8 +57,8 @@ public class CameraFollow : MonoBehaviour
 
         player1Movement = controls.Gameplay.Movement1.ReadValue<Vector2>();
         player2Movement = controls.Gameplay.Movement2.ReadValue<Vector2>();
-        direction = new Vector2((player1Movement.x + player2Movement.x) / 2, (player1Movement.y + player2Movement.y) / 2); //Finds average movement of both players to direct camera sway
-
+        direction = new Vector2((player1Movement.x + player2Movement.x) / 2, (player1Movement.y + player2Movement.y - 4f) / 2); //Finds average movement of both players to direct camera sway
+                                                                                                                           //Small adjustment subtracted from y-axis so camera sits lower
         Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target);
 
         if (direction.x > 0f)

@@ -15,7 +15,7 @@ public class Ability1_3 : MonoBehaviour
         controls = new Controls();
     }
 
-    public void Ability1_1Setup()
+    public void Ability1_3Setup()
     {
         if (gameObject.GetComponent<Player1Stats>() != null)
         {

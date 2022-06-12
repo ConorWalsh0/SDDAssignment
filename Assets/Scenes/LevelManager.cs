@@ -28,8 +28,8 @@ public class LevelManager : MonoBehaviour
         player1CharacterSelect = CharacterCreation.GetComponent<CharacterCreation>().player1CharacterSelect;
         player2CharacterSelect = CharacterCreation.GetComponent<CharacterCreation>().player2CharacterSelect;
 
-        switch (player1CharacterSelect)
-        {
+        switch (player1CharacterSelect) //Creates a reference for the player's chosen class, enables the correct player's stats/movement scripts
+        {                               //then deletes the other player's stats/movement scripts, so that player can only control one character
             case 'f':
                 LvlStartPlayer1 = GameObject.Find("FighterClass");
                 LvlStartPlayer1.GetComponent<Player1Stats>().enabled = true;
@@ -76,14 +76,14 @@ public class LevelManager : MonoBehaviour
         Destroy(LvlStartPlayer2.GetComponent<Player1Stats>());
         Destroy(LvlStartPlayer2.GetComponent<Player1Movement>());
 
-        EnemyManager = GameObject.Find("EnemyManager");
+        EnemyManager = GameObject.Find("EnemyManager"); //Assigns player object references and calls several methods
         EnemyManager.GetComponent<Enemy>().Player1 = LvlStartPlayer1;
         EnemyManager.GetComponent<Enemy>().Player2 = LvlStartPlayer2;
         EnemyManager.GetComponent<EnemySpawn>().EnemyPlace();
         EnemyManager.GetComponent<Enemy>().EnemyPlayerClassSetup();
         GameObject.Find("RespawnPoint").GetComponent<Respawn>().RespawnSetup();
 
-        if (player1CharacterSelect == 'f' || player2CharacterSelect == 'f')
+        if (player1CharacterSelect == 'f' || player2CharacterSelect == 'f') //Tells the ability scripts of the players' chosen classes to perform setup
         {
             GameObject.Find("FighterClass").GetComponent<Ability0_1>().Ability0_1Setup();
             GameObject.Find("FighterClass").GetComponent<Ability1_1>().Ability1_1Setup();
@@ -93,14 +93,20 @@ public class LevelManager : MonoBehaviour
             GameObject.Find("WizardClass").GetComponent<Ability0_2>().Ability0_2Setup();
             GameObject.Find("WizardClass").GetComponent<Ability1_2>().Ability1_2Setup();
         }
+        if (player1CharacterSelect == 'r' || player2CharacterSelect == 'r')
+        {
+            GameObject.Find("RogueClass").GetComponent<Ability0_3>().Ability0_3Setup();
+            GameObject.Find("RogueClass").GetComponent<Ability1_3>().Ability1_3Setup();
+        }
     }
 
     public void ContinueNextLevel()
     {
         gameObject.transform.Find("Menu_LevelUp1").gameObject.SetActive(false);
+        Destroy(GameObject.Find("EnemyBarrier"));
     }
 
-    public void NextPlayer1AbilityUnlocked()
+    public void NextPlayer1AbilityUnlocked() //Finds player 1's class and enables their next ability
     {
         if (player1CharacterSelect == 'f')
         {

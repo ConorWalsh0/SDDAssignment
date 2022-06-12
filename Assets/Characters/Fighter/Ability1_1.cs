@@ -98,7 +98,8 @@ public class Ability1_1 : MonoBehaviour
 	//Emits number of health particles equal to 80% of current health, divided by 20.
 	public void HealthParticleEmission()
     {
-		if (gameObject.GetComponent<Player1Stats>().isActiveAndEnabled)
+		print(gameObject);
+		if (gameObject.GetComponent<Player1Stats>().isActiveAndEnabled) // Might need to null check instead
         {
 			playerHealth = gameObject.GetComponent<Player1Stats>().playerHealth;
 		}
