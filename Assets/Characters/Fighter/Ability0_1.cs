@@ -12,25 +12,47 @@ public class Ability0_1 : MonoBehaviour
     private float delay;
     private GameObject LvlStartPlayer1;
     private GameObject MainCamera;
+    public InputActionReference triggerAction1;
 
     void Awake()
     {
         controls = new Controls();
-        controls.Gameplay.Ability0_1.performed += Ability0_1Performed;
     }
 
     public void Ability0_1Setup()
     {
         MainCamera = GameObject.Find("Main Camera");
         LvlStartPlayer1 = MainCamera.GetComponent<LevelManager>().LvlStartPlayer1;
+
         if (LvlStartPlayer1 == gameObject)
         {
             playerDamage = gameObject.GetComponent<Player1Stats>().playerDamage;
+            controls.Gameplay.Ability0_1_1.performed += Ability0_1Performed;
         }
         else
         {
             playerDamage = gameObject.GetComponent<Player2Stats>().playerDamage;
+            controls.Gameplay.Ability0_1_2.performed += Ability0_1Performed;
         }
+
+        /*
+        if (LvlStartPlayer1 == gameObject) //Rebinds keys so that abilities match the player's bindings
+        {
+            print(triggerAction1.action.bindings[0]);
+            InputBinding binding = triggerAction1.action.bindings[0];
+            binding.overridePath = "<Keyboard>/downArrow";
+            triggerAction1.action.ApplyBindingOverride(0, binding);
+            print(triggerAction1.action.bindings[0]);
+        }
+        else
+        {
+            print(triggerAction1.action.bindings[0]);
+
+            InputBinding binding = triggerAction1.action.bindings[0];
+            binding.overridePath = "<Keyboard>/s";
+            triggerAction1.action.ApplyBindingOverride(0, binding);
+            print(triggerAction1.action.bindings[0]);
+        }*/
     }
 
     void Start()
@@ -52,23 +74,8 @@ public class Ability0_1 : MonoBehaviour
         controls.Gameplay.Enable();
     }
 
-    public InputActionReference triggerAction;
-
     void Ability0_1Performed(InputAction.CallbackContext context)
     {
-        if (LvlStartPlayer1 == gameObject) //Rebinds keys so that abilities match the player's bindings
-        {
-            InputBinding binding = triggerAction.action.bindings[0];
-            binding.overridePath = "<Keyboard>/#(downArrow)";
-            triggerAction.action.ApplyBindingOverride(0, binding);
-        }
-        else
-        {
-            InputBinding binding = triggerAction.action.bindings[0];
-            binding.overridePath = "<Keyboard>/#(s)";
-            triggerAction.action.ApplyBindingOverride(0, binding);
-        }
-
         if (delay <= 0f)
         {
             animator.SetTrigger("Ability0_1");

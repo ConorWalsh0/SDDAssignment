@@ -117,13 +117,28 @@ public class Ability1_1 : MonoBehaviour
 
 	public void Ability1_1Selected()
     {
-		controls.Gameplay.Ability1_1.performed += Ability1_1Performed;
+		if (Player1 == gameObject)
+        {
+			controls.Gameplay.Ability1_1_1.performed += Ability1_1Performed;
+		}
+        else
+        {
+			controls.Gameplay.Ability1_1_2.performed += Ability1_1Performed;
+		}
 	}
 
+	/*
 	public void Ability1_1Deselected()
     {
-		controls.Gameplay.Ability1_1.performed -= Ability1_1Performed;
-	}
+		if (Player1 == gameObject)
+		{
+			controls.Gameplay.Ability1_1_1.performed -= Ability1_1Performed;
+		}
+		else
+		{
+			controls.Gameplay.Ability1_1_2.performed -= Ability1_1Performed;
+		}
+	}*/
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{

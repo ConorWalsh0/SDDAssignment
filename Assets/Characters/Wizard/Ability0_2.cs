@@ -12,11 +12,11 @@ public class Ability0_2 : MonoBehaviour
     private float delay;
     private GameObject LvlStartPlayer1;
     private GameObject MainCamera;
+    public InputActionReference triggerAction2;
 
     void Awake()
     {
         controls = new Controls();
-        controls.Gameplay.Ability0_2.performed += Ability0_2Performed;
     }
 
     public void Ability0_2Setup()
@@ -26,11 +26,38 @@ public class Ability0_2 : MonoBehaviour
         if (LvlStartPlayer1 == gameObject)
         {
             playerDamage = gameObject.GetComponent<Player1Stats>().playerDamage;
+            controls.Gameplay.Ability0_2_1.performed += Ability0_2Performed;
         }
         else
         {
             playerDamage = gameObject.GetComponent<Player2Stats>().playerDamage;
+            controls.Gameplay.Ability0_2_2.performed += Ability0_2Performed;
         }
+
+
+
+        /*
+        if (LvlStartPlayer1 == gameObject) //Rebinds keys so that abilities match the player's bindings
+        {
+            print(triggerAction2.action.bindings[0]);
+
+            InputBinding binding = triggerAction2.action.bindings[0];
+            binding.overridePath = "<Keyboard>/downArrow";
+            triggerAction2.action.ApplyBindingOverride(0, binding);
+            print(triggerAction2.action.bindings[0]);
+
+        }
+        else
+        {
+            print(triggerAction2.action.bindings[0]);
+
+            InputBinding binding = triggerAction2.action.bindings[0];
+            binding.overridePath = "<Keyboard>/s";
+            triggerAction2.action.ApplyBindingOverride(0, binding);
+            print(triggerAction2.action.bindings[0]);
+
+        }
+        */
     }
 
     void Start()

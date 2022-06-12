@@ -64,7 +64,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability0_1"",
+                    ""name"": ""Ability0_1_1"",
                     ""type"": ""Button"",
                     ""id"": ""3faa5091-a9b5-4de6-9bfe-4b4defdf4460"",
                     ""expectedControlType"": ""Button"",
@@ -73,16 +73,16 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability1_1"",
+                    ""name"": ""Ability0_1_2"",
                     ""type"": ""Button"",
-                    ""id"": ""1ebddc6f-6211-4691-adce-a59827a8ea78"",
+                    ""id"": ""e1bba895-c556-436c-b2dc-b2d322adfff8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability0_2"",
+                    ""name"": ""Ability0_2_1"",
                     ""type"": ""Button"",
                     ""id"": ""df1bbaf7-4717-42f9-a856-7937f6aa6a8c"",
                     ""expectedControlType"": ""Button"",
@@ -91,16 +91,16 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability1_2"",
+                    ""name"": ""Ability0_2_2"",
                     ""type"": ""Button"",
-                    ""id"": ""59bfc0ee-3eaf-436f-88c8-4db0e1607937"",
+                    ""id"": ""a782365d-4fd5-413a-9e4a-1cfd3520424d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability0_3"",
+                    ""name"": ""Ability0_3_1"",
                     ""type"": ""Button"",
                     ""id"": ""b2c48c0f-b7ae-43f9-8253-c5be6380e8ae"",
                     ""expectedControlType"": ""Button"",
@@ -109,9 +109,63 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability1_3"",
+                    ""name"": ""Ability0_3_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""c621d3aa-71ba-414d-b72b-7e0254a22396"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_1_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""1ebddc6f-6211-4691-adce-a59827a8ea78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_1_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9dca978-1be1-48d5-9013-59534853e892"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_2_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""59bfc0ee-3eaf-436f-88c8-4db0e1607937"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_2_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b39bc4a5-dea1-4fbe-8130-0fa9fd98bb60"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_3_1"",
                     ""type"": ""Button"",
                     ""id"": ""95252ebe-8807-4b3f-b693-b01aeeeeaddc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1_3_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""72a2b6ee-b37c-48fa-aa2c-cc43eb1d3f79"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -197,11 +251,11 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1ef9f054-f69a-4b69-8066-fedf09209961"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Ability1_2"",
+                    ""action"": ""Ability1_2_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -229,34 +283,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""962b026c-8b77-4617-bf06-77c3d9803967"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Ability0_3"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c96a68f2-996a-41cc-ba3a-3d86ab830625"",
                     ""path"": ""<Keyboard>/comma"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Ability1_3"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a07460ce-6635-43b8-9bc8-b514fae86912"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Ability0_2"",
+                    ""action"": ""Ability1_3_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -264,7 +296,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""73a40c62-4252-43a9-b2f1-9c78b2581815"",
                     ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Pause"",
@@ -275,21 +307,109 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""d39b3f4e-be56-4290-acba-4fcc8ad67f96"",
                     ""path"": ""<Keyboard>/comma"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Ability1_1"",
+                    ""action"": ""Ability1_1_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""79d2465d-51c9-4f4a-b255-6ff23407a540"",
+                    ""id"": ""eed8218d-ea4b-41b5-990c-74dcf6fb46b9"",
                     ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Ability0_1"",
+                    ""action"": ""Ability0_1_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1305e583-a81c-44d2-a366-fd39fd36534a"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_2_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e738f81f-2027-46e5-97b2-ca5aa7611f4b"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_3_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61f2b48b-adad-4f3d-a05c-a0c219b15ff1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_1_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c156a5dd-64f9-4483-aee0-df093ff376f2"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_2_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fc6d990-3e71-4834-9667-2cd955fa1158"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability0_3_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""878d22b1-c672-4ba9-a178-bc3797792b95"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability1_1_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f08728a-2a40-4ba6-9d9e-8097e73db0a1"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability1_2_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af948363-15dc-41dc-a2b8-5c5869638c62"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability1_3_2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -377,12 +497,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Gameplay_Jump1 = m_Gameplay.FindAction("Jump1", throwIfNotFound: true);
         m_Gameplay_Movement2 = m_Gameplay.FindAction("Movement2", throwIfNotFound: true);
         m_Gameplay_Jump2 = m_Gameplay.FindAction("Jump2", throwIfNotFound: true);
-        m_Gameplay_Ability0_1 = m_Gameplay.FindAction("Ability0_1", throwIfNotFound: true);
-        m_Gameplay_Ability1_1 = m_Gameplay.FindAction("Ability1_1", throwIfNotFound: true);
-        m_Gameplay_Ability0_2 = m_Gameplay.FindAction("Ability0_2", throwIfNotFound: true);
-        m_Gameplay_Ability1_2 = m_Gameplay.FindAction("Ability1_2", throwIfNotFound: true);
-        m_Gameplay_Ability0_3 = m_Gameplay.FindAction("Ability0_3", throwIfNotFound: true);
-        m_Gameplay_Ability1_3 = m_Gameplay.FindAction("Ability1_3", throwIfNotFound: true);
+        m_Gameplay_Ability0_1_1 = m_Gameplay.FindAction("Ability0_1_1", throwIfNotFound: true);
+        m_Gameplay_Ability0_1_2 = m_Gameplay.FindAction("Ability0_1_2", throwIfNotFound: true);
+        m_Gameplay_Ability0_2_1 = m_Gameplay.FindAction("Ability0_2_1", throwIfNotFound: true);
+        m_Gameplay_Ability0_2_2 = m_Gameplay.FindAction("Ability0_2_2", throwIfNotFound: true);
+        m_Gameplay_Ability0_3_1 = m_Gameplay.FindAction("Ability0_3_1", throwIfNotFound: true);
+        m_Gameplay_Ability0_3_2 = m_Gameplay.FindAction("Ability0_3_2", throwIfNotFound: true);
+        m_Gameplay_Ability1_1_1 = m_Gameplay.FindAction("Ability1_1_1", throwIfNotFound: true);
+        m_Gameplay_Ability1_1_2 = m_Gameplay.FindAction("Ability1_1_2", throwIfNotFound: true);
+        m_Gameplay_Ability1_2_1 = m_Gameplay.FindAction("Ability1_2_1", throwIfNotFound: true);
+        m_Gameplay_Ability1_2_2 = m_Gameplay.FindAction("Ability1_2_2", throwIfNotFound: true);
+        m_Gameplay_Ability1_3_1 = m_Gameplay.FindAction("Ability1_3_1", throwIfNotFound: true);
+        m_Gameplay_Ability1_3_2 = m_Gameplay.FindAction("Ability1_3_2", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
@@ -450,12 +576,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Jump1;
     private readonly InputAction m_Gameplay_Movement2;
     private readonly InputAction m_Gameplay_Jump2;
-    private readonly InputAction m_Gameplay_Ability0_1;
-    private readonly InputAction m_Gameplay_Ability1_1;
-    private readonly InputAction m_Gameplay_Ability0_2;
-    private readonly InputAction m_Gameplay_Ability1_2;
-    private readonly InputAction m_Gameplay_Ability0_3;
-    private readonly InputAction m_Gameplay_Ability1_3;
+    private readonly InputAction m_Gameplay_Ability0_1_1;
+    private readonly InputAction m_Gameplay_Ability0_1_2;
+    private readonly InputAction m_Gameplay_Ability0_2_1;
+    private readonly InputAction m_Gameplay_Ability0_2_2;
+    private readonly InputAction m_Gameplay_Ability0_3_1;
+    private readonly InputAction m_Gameplay_Ability0_3_2;
+    private readonly InputAction m_Gameplay_Ability1_1_1;
+    private readonly InputAction m_Gameplay_Ability1_1_2;
+    private readonly InputAction m_Gameplay_Ability1_2_1;
+    private readonly InputAction m_Gameplay_Ability1_2_2;
+    private readonly InputAction m_Gameplay_Ability1_3_1;
+    private readonly InputAction m_Gameplay_Ability1_3_2;
     private readonly InputAction m_Gameplay_Pause;
     public struct GameplayActions
     {
@@ -465,12 +597,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Jump1 => m_Wrapper.m_Gameplay_Jump1;
         public InputAction @Movement2 => m_Wrapper.m_Gameplay_Movement2;
         public InputAction @Jump2 => m_Wrapper.m_Gameplay_Jump2;
-        public InputAction @Ability0_1 => m_Wrapper.m_Gameplay_Ability0_1;
-        public InputAction @Ability1_1 => m_Wrapper.m_Gameplay_Ability1_1;
-        public InputAction @Ability0_2 => m_Wrapper.m_Gameplay_Ability0_2;
-        public InputAction @Ability1_2 => m_Wrapper.m_Gameplay_Ability1_2;
-        public InputAction @Ability0_3 => m_Wrapper.m_Gameplay_Ability0_3;
-        public InputAction @Ability1_3 => m_Wrapper.m_Gameplay_Ability1_3;
+        public InputAction @Ability0_1_1 => m_Wrapper.m_Gameplay_Ability0_1_1;
+        public InputAction @Ability0_1_2 => m_Wrapper.m_Gameplay_Ability0_1_2;
+        public InputAction @Ability0_2_1 => m_Wrapper.m_Gameplay_Ability0_2_1;
+        public InputAction @Ability0_2_2 => m_Wrapper.m_Gameplay_Ability0_2_2;
+        public InputAction @Ability0_3_1 => m_Wrapper.m_Gameplay_Ability0_3_1;
+        public InputAction @Ability0_3_2 => m_Wrapper.m_Gameplay_Ability0_3_2;
+        public InputAction @Ability1_1_1 => m_Wrapper.m_Gameplay_Ability1_1_1;
+        public InputAction @Ability1_1_2 => m_Wrapper.m_Gameplay_Ability1_1_2;
+        public InputAction @Ability1_2_1 => m_Wrapper.m_Gameplay_Ability1_2_1;
+        public InputAction @Ability1_2_2 => m_Wrapper.m_Gameplay_Ability1_2_2;
+        public InputAction @Ability1_3_1 => m_Wrapper.m_Gameplay_Ability1_3_1;
+        public InputAction @Ability1_3_2 => m_Wrapper.m_Gameplay_Ability1_3_2;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -493,24 +631,42 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Jump2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump2;
                 @Jump2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump2;
                 @Jump2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump2;
-                @Ability0_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
-                @Ability0_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
-                @Ability0_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1;
-                @Ability1_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
-                @Ability1_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
-                @Ability1_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1;
-                @Ability0_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2;
-                @Ability0_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2;
-                @Ability0_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2;
-                @Ability1_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2;
-                @Ability1_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2;
-                @Ability1_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2;
-                @Ability0_3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3;
-                @Ability0_3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3;
-                @Ability0_3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3;
-                @Ability1_3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3;
-                @Ability1_3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3;
-                @Ability1_3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3;
+                @Ability0_1_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1_1;
+                @Ability0_1_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1_1;
+                @Ability0_1_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1_1;
+                @Ability0_1_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1_2;
+                @Ability0_1_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1_2;
+                @Ability0_1_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_1_2;
+                @Ability0_2_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2_1;
+                @Ability0_2_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2_1;
+                @Ability0_2_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2_1;
+                @Ability0_2_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2_2;
+                @Ability0_2_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2_2;
+                @Ability0_2_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_2_2;
+                @Ability0_3_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3_1;
+                @Ability0_3_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3_1;
+                @Ability0_3_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3_1;
+                @Ability0_3_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3_2;
+                @Ability0_3_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3_2;
+                @Ability0_3_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility0_3_2;
+                @Ability1_1_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1_1;
+                @Ability1_1_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1_1;
+                @Ability1_1_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1_1;
+                @Ability1_1_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1_2;
+                @Ability1_1_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1_2;
+                @Ability1_1_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_1_2;
+                @Ability1_2_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2_1;
+                @Ability1_2_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2_1;
+                @Ability1_2_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2_1;
+                @Ability1_2_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2_2;
+                @Ability1_2_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2_2;
+                @Ability1_2_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_2_2;
+                @Ability1_3_1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3_1;
+                @Ability1_3_1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3_1;
+                @Ability1_3_1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3_1;
+                @Ability1_3_2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3_2;
+                @Ability1_3_2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3_2;
+                @Ability1_3_2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility1_3_2;
                 @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
@@ -530,24 +686,42 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Jump2.started += instance.OnJump2;
                 @Jump2.performed += instance.OnJump2;
                 @Jump2.canceled += instance.OnJump2;
-                @Ability0_1.started += instance.OnAbility0_1;
-                @Ability0_1.performed += instance.OnAbility0_1;
-                @Ability0_1.canceled += instance.OnAbility0_1;
-                @Ability1_1.started += instance.OnAbility1_1;
-                @Ability1_1.performed += instance.OnAbility1_1;
-                @Ability1_1.canceled += instance.OnAbility1_1;
-                @Ability0_2.started += instance.OnAbility0_2;
-                @Ability0_2.performed += instance.OnAbility0_2;
-                @Ability0_2.canceled += instance.OnAbility0_2;
-                @Ability1_2.started += instance.OnAbility1_2;
-                @Ability1_2.performed += instance.OnAbility1_2;
-                @Ability1_2.canceled += instance.OnAbility1_2;
-                @Ability0_3.started += instance.OnAbility0_3;
-                @Ability0_3.performed += instance.OnAbility0_3;
-                @Ability0_3.canceled += instance.OnAbility0_3;
-                @Ability1_3.started += instance.OnAbility1_3;
-                @Ability1_3.performed += instance.OnAbility1_3;
-                @Ability1_3.canceled += instance.OnAbility1_3;
+                @Ability0_1_1.started += instance.OnAbility0_1_1;
+                @Ability0_1_1.performed += instance.OnAbility0_1_1;
+                @Ability0_1_1.canceled += instance.OnAbility0_1_1;
+                @Ability0_1_2.started += instance.OnAbility0_1_2;
+                @Ability0_1_2.performed += instance.OnAbility0_1_2;
+                @Ability0_1_2.canceled += instance.OnAbility0_1_2;
+                @Ability0_2_1.started += instance.OnAbility0_2_1;
+                @Ability0_2_1.performed += instance.OnAbility0_2_1;
+                @Ability0_2_1.canceled += instance.OnAbility0_2_1;
+                @Ability0_2_2.started += instance.OnAbility0_2_2;
+                @Ability0_2_2.performed += instance.OnAbility0_2_2;
+                @Ability0_2_2.canceled += instance.OnAbility0_2_2;
+                @Ability0_3_1.started += instance.OnAbility0_3_1;
+                @Ability0_3_1.performed += instance.OnAbility0_3_1;
+                @Ability0_3_1.canceled += instance.OnAbility0_3_1;
+                @Ability0_3_2.started += instance.OnAbility0_3_2;
+                @Ability0_3_2.performed += instance.OnAbility0_3_2;
+                @Ability0_3_2.canceled += instance.OnAbility0_3_2;
+                @Ability1_1_1.started += instance.OnAbility1_1_1;
+                @Ability1_1_1.performed += instance.OnAbility1_1_1;
+                @Ability1_1_1.canceled += instance.OnAbility1_1_1;
+                @Ability1_1_2.started += instance.OnAbility1_1_2;
+                @Ability1_1_2.performed += instance.OnAbility1_1_2;
+                @Ability1_1_2.canceled += instance.OnAbility1_1_2;
+                @Ability1_2_1.started += instance.OnAbility1_2_1;
+                @Ability1_2_1.performed += instance.OnAbility1_2_1;
+                @Ability1_2_1.canceled += instance.OnAbility1_2_1;
+                @Ability1_2_2.started += instance.OnAbility1_2_2;
+                @Ability1_2_2.performed += instance.OnAbility1_2_2;
+                @Ability1_2_2.canceled += instance.OnAbility1_2_2;
+                @Ability1_3_1.started += instance.OnAbility1_3_1;
+                @Ability1_3_1.performed += instance.OnAbility1_3_1;
+                @Ability1_3_1.canceled += instance.OnAbility1_3_1;
+                @Ability1_3_2.started += instance.OnAbility1_3_2;
+                @Ability1_3_2.performed += instance.OnAbility1_3_2;
+                @Ability1_3_2.canceled += instance.OnAbility1_3_2;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -603,12 +777,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnJump1(InputAction.CallbackContext context);
         void OnMovement2(InputAction.CallbackContext context);
         void OnJump2(InputAction.CallbackContext context);
-        void OnAbility0_1(InputAction.CallbackContext context);
-        void OnAbility1_1(InputAction.CallbackContext context);
-        void OnAbility0_2(InputAction.CallbackContext context);
-        void OnAbility1_2(InputAction.CallbackContext context);
-        void OnAbility0_3(InputAction.CallbackContext context);
-        void OnAbility1_3(InputAction.CallbackContext context);
+        void OnAbility0_1_1(InputAction.CallbackContext context);
+        void OnAbility0_1_2(InputAction.CallbackContext context);
+        void OnAbility0_2_1(InputAction.CallbackContext context);
+        void OnAbility0_2_2(InputAction.CallbackContext context);
+        void OnAbility0_3_1(InputAction.CallbackContext context);
+        void OnAbility0_3_2(InputAction.CallbackContext context);
+        void OnAbility1_1_1(InputAction.CallbackContext context);
+        void OnAbility1_1_2(InputAction.CallbackContext context);
+        void OnAbility1_2_1(InputAction.CallbackContext context);
+        void OnAbility1_2_2(InputAction.CallbackContext context);
+        void OnAbility1_3_1(InputAction.CallbackContext context);
+        void OnAbility1_3_2(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
     public interface IMenuActions

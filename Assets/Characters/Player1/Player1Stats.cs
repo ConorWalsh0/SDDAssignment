@@ -119,8 +119,9 @@ public class Player1Stats : Players
 		HealthBarUpdate();
     }
 
-	public void Ability2_1Unlock()
+	public void Player1NextLevel()
 	{
-		//gameObject.GetComponent<Ability2_1>().enabled = true;
+		playerHealth = maxPlayerHealth;
+		HealthBarUpdate();
 	}
 }

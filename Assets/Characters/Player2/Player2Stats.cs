@@ -118,4 +118,9 @@ public class Player2Stats : Players
 		//gameObject.GetComponent<Ability2_1>().enabled = true;
 	}
 
+	public void Player2NextLevel()
+    {
+		playerHealth = maxPlayerHealth;
+		HealthBarUpdate();
+	}
 }

@@ -19,7 +19,6 @@ public class Ability1_2 : MonoBehaviour
     void Awake()
     {
         controls = new Controls();
-        controls.Gameplay.Ability1_2.performed += Ability1_2Performed;
     }
 
     public void Ability1_2Setup()
@@ -90,6 +89,18 @@ public class Ability1_2 : MonoBehaviour
             FireballClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(20f * playerDirection, 1f), ForceMode2D.Impulse);
             delay = 0.4f;
             Destroy(FireballClone, 4);
+        }
+    }
+
+    public void Ability1_2Selected()
+    {
+        if (LvlStartPlayer1 == gameObject)
+        {
+            controls.Gameplay.Ability1_2_1.performed += Ability1_2Performed;
+        }
+        else
+        {
+            controls.Gameplay.Ability1_2_2.performed += Ability1_2Performed;
         }
     }
 }

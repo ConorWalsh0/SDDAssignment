@@ -97,7 +97,41 @@ public class LevelManager : MonoBehaviour
 
     public void ContinueNextLevel()
     {
-        //RespawnPoint.GetComponent<Respawn>().PlayerRespawn(player);
         gameObject.transform.Find("Menu_LevelUp1").gameObject.SetActive(false);
+    }
+
+    public void NextPlayer1AbilityUnlocked()
+    {
+        if (player1CharacterSelect == 'f')
+        {
+            LvlStartPlayer1.GetComponent<Ability1_1>().Ability1_1Selected();
+        }
+        else if (player1CharacterSelect == 'w')
+        {
+            LvlStartPlayer1.GetComponent<Ability1_2>().Ability1_2Selected();
+        }
+        else if (player1CharacterSelect == 'r')
+        {
+            LvlStartPlayer1.GetComponent<Ability1_3>().Ability1_3Selected();
+        }
+
+        LvlStartPlayer1.GetComponent<Player1Stats>().Player1NextLevel();
+    }
+
+    public void NextPlayer2AbilityUnlocked()
+    {
+        if (player2CharacterSelect == 'f')
+        {
+            LvlStartPlayer2.GetComponent<Ability1_1>().Ability1_1Selected();
+        }
+        else if (player2CharacterSelect == 'w')
+        {
+            LvlStartPlayer2.GetComponent<Ability1_2>().Ability1_2Selected();
+        }
+        else if (player2CharacterSelect == 'r')
+        {
+            LvlStartPlayer2.GetComponent<Ability1_3>().Ability1_3Selected();
+        }
+        LvlStartPlayer2.GetComponent<Player2Stats>().Player2NextLevel();
     }
 }
