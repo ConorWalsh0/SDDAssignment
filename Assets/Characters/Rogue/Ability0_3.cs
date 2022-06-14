@@ -12,7 +12,6 @@ public class Ability0_3 : MonoBehaviour
     private float delay;
     private GameObject LvlStartPlayer1;
     private GameObject MainCamera;
-    public InputActionReference triggerAction3;
 
     void Awake()
     {
