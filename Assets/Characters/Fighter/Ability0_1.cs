@@ -34,25 +34,6 @@ public class Ability0_1 : MonoBehaviour
             playerDamage = gameObject.GetComponent<Player2Stats>().playerDamage;
             controls.Gameplay.Ability0_1_2.performed += Ability0_1Performed;
         }
-
-        /*
-        if (LvlStartPlayer1 == gameObject) //Rebinds keys so that abilities match the player's bindings
-        {
-            print(triggerAction1.action.bindings[0]);
-            InputBinding binding = triggerAction1.action.bindings[0];
-            binding.overridePath = "<Keyboard>/downArrow";
-            triggerAction1.action.ApplyBindingOverride(0, binding);
-            print(triggerAction1.action.bindings[0]);
-        }
-        else
-        {
-            print(triggerAction1.action.bindings[0]);
-
-            InputBinding binding = triggerAction1.action.bindings[0];
-            binding.overridePath = "<Keyboard>/s";
-            triggerAction1.action.ApplyBindingOverride(0, binding);
-            print(triggerAction1.action.bindings[0]);
-        }*/
     }
 
     void Start()

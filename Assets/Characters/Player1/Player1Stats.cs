@@ -106,7 +106,8 @@ public class Player1Stats : Players
 	public void Ability1_1Used()
     {
 		playerHealth -= Mathf.RoundToInt(maxPlayerHealth * particleHealth / 25);
-    }
+		HealthBarUpdate();
+	}
 
 	public void ParticleHeal()
     {
@@ -123,8 +124,14 @@ public class Player1Stats : Players
 		HealthBarUpdate();
     }
 
-	public void Player1NextLevel() //pass through attributes here?
-	{
+	public void Player1NextLevelStatUpdate(int Health1, int Speed1, int Armour1)
+    {
+		maxPlayerHealth += Health1 * 30;
+		playerSpeedModifier += Speed1 * 0.1f;
+		playerArmour += Armour1 * 3;
+
+		gameObject.GetComponent<Player1Movement>().UpdatePlayer1SpeedModifier(playerSpeedModifier);
+
 		playerHealth = maxPlayerHealth;
 		HealthBarUpdate();
 	}

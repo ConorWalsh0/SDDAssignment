@@ -26,13 +26,17 @@ public class Player1Movement : MonoBehaviour
 	void Start()
 	{
 		speedModifier = gameObject.GetComponent<Player1Stats>().playerSpeedModifier;
-
 	}
 
 	void OnEnable()
 	{
 		controls.Gameplay.Enable();
 	}
+
+	public void UpdatePlayer1SpeedModifier(float playerSpeedModifier)
+    {
+		speedModifier = playerSpeedModifier;
+    }
 
 	void Update()
 	{

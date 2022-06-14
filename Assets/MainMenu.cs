@@ -2,27 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject PauseMenu;
+    public GameObject MainMenuScreen;
     private bool Paused;
-    private Controls controls;
-
-    void Awake()
-    {
-        controls = new Controls();
-    }
 
     void Start()
     {
-        Paused = false;
-        controls.Gameplay.Pause.performed += PausePressed;
+        Paused = true;
     }
 
-    void PausePressed(InputAction.CallbackContext context)
+    void OnPause()
     {
-        print(PauseMenu);
         if (Paused)
         {
             Time.timeScale = 1f;
@@ -41,10 +35,28 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    void ResumePressed()
+    public void ResumePressed()
     {
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
         Paused = !Paused;
+    }
+
+    public void ExitGamePressed()
+    {
+        Application.Quit();
+    }
+
+    public void NewGamePressed()
+    {
+        Time.timeScale = 1f;
+        Paused = !Paused;
+        MainMenuScreen.SetActive(false);
+
+    }
+
+    public void RestartGamePressed()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

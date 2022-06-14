@@ -23,6 +23,8 @@ public class Ability1_1 : MonoBehaviour
 	private GameObject WizardClass;
 	private GameObject RogueClass;
 	private GameObject CharacterCreation;
+	private char player1CharacterSelect;
+	private char player2CharacterSelect;
 
 	void Start()
 	{
@@ -34,11 +36,18 @@ public class Ability1_1 : MonoBehaviour
 
 	public void Ability1_1Setup()
     {
-		if (gameObject.GetComponent<Player1Stats>() != null)
+		FighterClass = GameObject.Find("FighterClass");
+		WizardClass = GameObject.Find("WizardClass");
+		RogueClass = GameObject.Find("RogueClass");
+		CharacterCreation = GameObject.Find("CharacterCreation");
+		player1CharacterSelect = CharacterCreation.GetComponent<CharacterCreation>().player1CharacterSelect;
+		player2CharacterSelect = CharacterCreation.GetComponent<CharacterCreation>().player2CharacterSelect;
+
+		if (player1CharacterSelect == 'f')
 		{
 			Player1 = this.gameObject;
 		}
-		else if (gameObject.GetComponent<Player2Stats>() != null)
+		else if (player2CharacterSelect == 'f')
 		{
 			Player2 = this.gameObject;
 		}
@@ -46,11 +55,6 @@ public class Ability1_1 : MonoBehaviour
 		{
 			Debug.Log("Fighter not selected");
 		}
-
-		FighterClass = GameObject.Find("FighterClass");
-		WizardClass = GameObject.Find("WizardClass");
-		RogueClass = GameObject.Find("RogueClass");
-		CharacterCreation = GameObject.Find("CharacterCreation");
 	}
 
 	void Update()
@@ -85,25 +89,40 @@ public class Ability1_1 : MonoBehaviour
 			float maxPlayerHealthFloat = (float)maxPlayerHealth;
 			abilityParticleNum = Mathf.RoundToInt(maxPlayerHealth / 20);
 			particleSys.Emit(abilityParticleNum);
-			GetComponent<Player1Stats>().Ability1_1Used();
+
+			if (Player1 == this.gameObject)
+			{
+				GetComponent<Player1Stats>().Ability1_1Used();
+			}
+			else if (Player2 == this.gameObject)
+			{
+				GetComponent<Player2Stats>().Ability1_1Used();
+			}
 		}
         else
         {
 			abilityParticleNum = 1;
 			particleSys.Emit(abilityParticleNum);
-			GetComponent<Player1Stats>().Ability1_1Used();
+
+			if (Player1 == this.gameObject)
+			{
+				GetComponent<Player1Stats>().Ability1_1Used();
+			}
+			else if (Player2 == this.gameObject)
+			{
+				GetComponent<Player2Stats>().Ability1_1Used();
+			}
 		}
 	}
 
 	//Emits number of health particles equal to 80% of current health, divided by 20.
 	public void HealthParticleEmission()
     {
-		print(gameObject);
-		if (gameObject.GetComponent<Player1Stats>().isActiveAndEnabled) // Might need to null check instead
+		if (Player1 == this.gameObject)
         {
 			playerHealth = gameObject.GetComponent<Player1Stats>().playerHealth;
 		}
-		else if (gameObject.GetComponent<Player2Stats>().isActiveAndEnabled)
+		else if (Player2 == this.gameObject)
         {
 			playerHealth = gameObject.GetComponent<Player2Stats>().playerHealth;
 		}
@@ -162,7 +181,7 @@ public class Ability1_1 : MonoBehaviour
 			ClosestPlayer(p.position);
 
 			//Accesses health info from the closest player to the health particle
-			if (CharacterCreation.GetComponent<CharacterCreation>().player1CharacterSelect == closestPlayer) //Could use lvlStartPlayer1/2 and a check on active components instead
+			if (CharacterCreation.GetComponent<CharacterCreation>().player1CharacterSelect == closestPlayer)
             {
 				switch (closestPlayer)
                 {

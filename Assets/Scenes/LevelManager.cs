@@ -82,6 +82,7 @@ public class LevelManager : MonoBehaviour
         EnemyManager.GetComponent<EnemySpawn>().EnemyPlace();
         EnemyManager.GetComponent<Enemy>().EnemyPlayerClassSetup();
         GameObject.Find("RespawnPoint").GetComponent<Respawn>().RespawnSetup();
+        gameObject.transform.GetChild(0).gameObject.GetComponent<LevelUpScreen>().LevelUpScreenSetup(player1CharacterSelect, player2CharacterSelect); //Finds Menu_LevelUp1
 
         if (player1CharacterSelect == 'f' || player2CharacterSelect == 'f') //Tells the ability scripts of the players' chosen classes to perform setup
         {
@@ -100,10 +101,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void ContinueNextLevel()
+    public void ContinueNextLevel(int Health1, int Health2, int Speed1, int Speed2, int Armour1, int Armour2)
     {
         gameObject.transform.Find("Menu_LevelUp1").gameObject.SetActive(false);
         Destroy(GameObject.Find("EnemyBarrier"));
+        LvlStartPlayer1.GetComponent<Player1Stats>().Player1NextLevelStatUpdate(Health1, Speed1, Armour1);
+        LvlStartPlayer2.GetComponent<Player2Stats>().Player2NextLevelStatUpdate(Health2, Speed2, Armour2);
     }
 
     public void NextPlayer1AbilityUnlocked() //Finds player 1's class and enables their next ability
@@ -120,8 +123,6 @@ public class LevelManager : MonoBehaviour
         {
             LvlStartPlayer1.GetComponent<Ability1_3>().Ability1_3Selected();
         }
-
-        LvlStartPlayer1.GetComponent<Player1Stats>().Player1NextLevel();
     }
 
     public void NextPlayer2AbilityUnlocked()
@@ -138,6 +139,5 @@ public class LevelManager : MonoBehaviour
         {
             LvlStartPlayer2.GetComponent<Ability1_3>().Ability1_3Selected();
         }
-        LvlStartPlayer2.GetComponent<Player2Stats>().Player2NextLevel();
     }
 }
