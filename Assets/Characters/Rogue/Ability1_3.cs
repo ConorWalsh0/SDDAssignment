@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 public class Ability1_3 : MonoBehaviour
 {
     public Animator animator;
-    private GameObject Player1;
-    private GameObject Player2;
+    private GameObject LvlStartPlayer1;
+    private GameObject LvlStartPlayer2;
+    private GameObject MainCamera;
     private Controls controls;
     private float delay;
     private bool facingRight;
@@ -20,18 +21,9 @@ public class Ability1_3 : MonoBehaviour
 
     public void Ability1_3Setup()
     {
-        if (gameObject.GetComponent<Player1Stats>() != null)
-        {
-            Player1 = this.gameObject;
-        }
-        else if (gameObject.GetComponent<Player2Stats>() != null)
-        {
-            Player2 = this.gameObject;
-        }
-        else
-        {
-            Debug.Log("Rogue not selected");
-        }
+        MainCamera = GameObject.Find("Main Camera");
+        LvlStartPlayer1 = MainCamera.GetComponent<LevelManager>().LvlStartPlayer1;
+        LvlStartPlayer2 = MainCamera.GetComponent<LevelManager>().LvlStartPlayer2;
     }
 
     void Start()
@@ -50,7 +42,7 @@ public class Ability1_3 : MonoBehaviour
 
     public void Ability1_3Selected()
     {
-        if (Player1 == gameObject)
+        if (LvlStartPlayer1 == gameObject)
         {
             controls.Gameplay.Ability1_3_1.performed += Ability1_3Performed;
         }
@@ -66,13 +58,13 @@ public class Ability1_3 : MonoBehaviour
         {
             animator.SetTrigger("Ability1_3");
 
-            if (Player1 == gameObject)
+            if (LvlStartPlayer1 == gameObject)
             {
-                facingRight = Player1.GetComponent<Player1Movement>().facingRight;
+                facingRight = LvlStartPlayer1.GetComponent<Player1Movement>().facingRight;
             }
             else
             {
-                facingRight = Player2.GetComponent<Player2Movement>().facingRight;
+                facingRight = LvlStartPlayer2.GetComponent<Player2Movement>().facingRight;
             }
 
             if (facingRight) //reverses horizontal force if character is facing left

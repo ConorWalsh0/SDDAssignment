@@ -22,6 +22,7 @@ public class LevelUpScreen : MonoBehaviour
     public GameObject Player2AbilityImg;
     public Text Player1AbilityName;
     public Text Player2AbilityName;
+    public GameObject HUD;
 
     void Start()
     {
@@ -112,6 +113,7 @@ public class LevelUpScreen : MonoBehaviour
     //Activated by continue button, passes attributes to level manager, which passes them to the appropriate players
     public void PassAttributes()
     {
+        HUD.SetActive(true);
         gameObject.transform.parent.gameObject.GetComponent<LevelManager>().ContinueNextLevel(Health1, Health2, Speed1, Speed2, Armour1, Armour2);
     }
 

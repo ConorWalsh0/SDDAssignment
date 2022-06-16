@@ -16,6 +16,7 @@ public class Players : MonoBehaviour
     public GameObject RespawnPoint;
     public GameObject Menu_LevelUp1;
     public GameObject Credits;
+    public GameObject HUD;
     private int enemyDamage;
     public GameObject EnemyManager;
 
@@ -67,13 +68,12 @@ public class Players : MonoBehaviour
 
     public void LevelFinish()
     {
-        Debug.Log("yay");
         Menu_LevelUp1.SetActive(true);
+        HUD.SetActive(false);
     }
 
     public void GameFinish()
     {
         Credits.SetActive(true);
-        Debug.Log("Congratulations");
     }
 }

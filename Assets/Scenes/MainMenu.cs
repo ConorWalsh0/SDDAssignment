@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject MainMenuScreen;
+    public GameObject Credits;
     private bool Paused;
 
     void Start()
@@ -17,6 +18,11 @@ public class MainMenu : MonoBehaviour
 
     void OnPause()
     {
+        if (Credits.activeSelf)
+        {
+            Credits.SetActive(false);
+        }
+
         if (Paused)
         {
             Time.timeScale = 1f;
